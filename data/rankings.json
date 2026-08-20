@@ -1,9 +1,548 @@
 {
-  "last_updated": null,
+  "last_updated": "2026-08-20T15:17:19.479Z",
   "country": "India",
-  "country_code": "in",
+  "country_code": "",
   "language": "en",
   "search_engine": "google",
   "max_position": 100,
-  "domains": {}
+  "domains": {
+    "cricstrike.com": {
+      "domain": "cricstrike.com",
+      "keywords": [
+        {
+          "keyword": "Cricstrike",
+          "position": null,
+          "previous_position": null,
+          "change": null,
+          "url": null,
+          "checked_at": "2026-08-20T15:17:19.479Z",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists."
+        },
+        {
+          "keyword": "Cricstrike Login",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://cricstrike.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Cricstrike Signup",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://cricstrike.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Cricstrike Official Website",
+          "position": 2,
+          "previous_position": null,
+          "change": null,
+          "url": "https://cricstrike.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Cricstrike app",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://cricstrike.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Cricstrike app download",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://cricstrike.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Cricstrike register",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://cricstrike.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Cricstrike platform",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://cricstrike.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        }
+      ]
+    },
+    "khelo24race.com": {
+      "domain": "khelo24race.com",
+      "keywords": [
+        {
+          "keyword": "Khelo24race",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://khelo24race.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Khelo24race Login",
+          "position": null,
+          "previous_position": null,
+          "change": null,
+          "url": null,
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Khelo24race Signup",
+          "position": null,
+          "previous_position": null,
+          "change": null,
+          "url": null,
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Khelo24race Official Website",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://khelo24race.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Khelo24race app",
+          "position": null,
+          "previous_position": null,
+          "change": null,
+          "url": null,
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Khelo24race app download",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://khelo24race.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Khelo24race register",
+          "position": null,
+          "previous_position": null,
+          "change": null,
+          "url": null,
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Khelo24race platform",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://khelo24race.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        }
+      ]
+    },
+    "kheloexch99.com": {
+      "domain": "kheloexch99.com",
+      "keywords": [
+        {
+          "keyword": "Kheloexch",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://kheloexch99.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Kheloexch99",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://kheloexch99.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Kheloexch 99",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://kheloexch99.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Kheloexch Login",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://kheloexch99.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Kheloexch Signup",
+          "position": null,
+          "previous_position": null,
+          "change": null,
+          "url": null,
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Kheloexch Official Website",
+          "position": null,
+          "previous_position": null,
+          "change": null,
+          "url": null,
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Kheloexch app",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://kheloexch99.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Kheloexch app download",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://kheloexch99.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Kheloexch register",
+          "position": null,
+          "previous_position": null,
+          "change": null,
+          "url": null,
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Khelo Exchange",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://kheloexch99.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Kheloexch Account",
+          "position": null,
+          "previous_position": null,
+          "change": null,
+          "url": null,
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Kheloexch Sign In",
+          "position": null,
+          "previous_position": null,
+          "change": null,
+          "url": null,
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Kheloexch Customer Care",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://kheloexch99.com/contactus",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Kheloexch Official Link",
+          "position": null,
+          "previous_position": null,
+          "change": null,
+          "url": null,
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Kheloexch Portal",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://kheloexch99.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Kheloexch99 App Download",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://kheloexch99.com/download",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Kheloexch99 Account",
+          "position": null,
+          "previous_position": null,
+          "change": null,
+          "url": null,
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Kheloexch99 Register",
+          "position": null,
+          "previous_position": null,
+          "change": null,
+          "url": null,
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Kheloexch99 Login",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://kheloexch99.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Kheloexch99 Platform",
+          "position": null,
+          "previous_position": null,
+          "change": null,
+          "url": null,
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Kheloexch99 Website",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://kheloexch99.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        }
+      ]
+    },
+    "cricmatch247.com": {
+      "domain": "cricmatch247.com",
+      "keywords": [
+        {
+          "keyword": "Cricmatch",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://cricmatch247.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Cricmatch247",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://cricmatch247.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Cricmatch Login",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://cricmatch247.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Cricmatch Signup",
+          "position": null,
+          "previous_position": null,
+          "change": null,
+          "url": null,
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Cricmatch Official Website",
+          "position": null,
+          "previous_position": null,
+          "change": null,
+          "url": null,
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Cricmatch app",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://cricmatch247.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Cricmatch app download",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://cricmatch247.com/app-download",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Cricmatch register",
+          "position": null,
+          "previous_position": null,
+          "change": null,
+          "url": null,
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Cricmatch platform",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://cricmatch247.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Cricmatch247 Official Website",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://cricmatch247.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Cricmatch247 Register",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://cricmatch247.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Cricmatch247 Signup",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://cricmatch247.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Cricmatch247 App",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://cricmatch247.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Cricmatch247 Login",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://cricmatch247.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Cricmatch247 Website",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://cricmatch247.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        }
+      ]
+    },
+    "khelofun.com": {
+      "domain": "khelofun.com",
+      "keywords": [
+        {
+          "keyword": "Khelofun",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://khelofun.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Khelofun Login",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://khelofun.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Khelofun Signup",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://khelofun.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Khelofun Official Website",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://khelofun.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Khelofun app",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://khelofun.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Khelofun app download",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://khelofun.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Khelofun Register",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://khelofun.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Khelofun platform",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://khelofun.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Khelofun portal",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://khelofun.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Khelofun Affiliates",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://khelofun.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Khelofun Customer Care",
+          "position": null,
+          "previous_position": null,
+          "change": null,
+          "url": null,
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        },
+        {
+          "keyword": "Khelofun Official Link",
+          "position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": "https://khelofun.com/",
+          "checked_at": "2026-08-20T15:17:19.479Z"
+        }
+      ]
+    }
+  }
 }
