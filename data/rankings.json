@@ -1,6 +1,9 @@
 {
   "last_updated": null,
-  "domain": "example.com",
   "country": "India",
-  "keywords": []
+  "country_code": "in",
+  "language": "en",
+  "search_engine": "google",
+  "max_position": 100,
+  "domains": {}
 }
