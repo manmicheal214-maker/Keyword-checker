@@ -2,12 +2,11 @@ name: Check Rankings
 
 on:
   schedule:
-    # Run daily at 9:00 AM IST (03:30 UTC)
     - cron: '30 3 * * *'
   workflow_dispatch:
     inputs:
       diagnostic:
-        description: 'Run a safe one-keyword ZenRows diagnostic instead of the full ranking check'
+        description: 'Run two safe one-keyword ZenRows diagnostics'
         required: false
         default: false
         type: boolean
@@ -20,7 +19,6 @@ on:
 jobs:
   check-rankings:
     runs-on: ubuntu-latest
-
     permissions:
       contents: write
 
@@ -55,50 +53,47 @@ jobs:
             KEYWORD=$(node -e "const fs=require('fs'); const c=JSON.parse(fs.readFileSync('config/keywords.json','utf8')); process.stdout.write(c.domains[0].keywords[0]);")
           fi
 
-          echo "Testing one keyword: $KEYWORD"
-          echo 'API key: present (value hidden)'
-          echo 'Endpoint: https://serp.api.zenrows.com/v1/targets/google/search/{keyword}'
-          echo 'Country: in'
-          echo 'TLD: .co.in'
-
           ENCODED_QUERY=$(node -e "process.stdout.write(encodeURIComponent(process.argv[1]))" "$KEYWORD")
-          URL="https://serp.api.zenrows.com/v1/targets/google/search/${ENCODED_QUERY}?apikey=${ZENROWS_API_KEY}&country=in&tld=.co.in"
+          BASE_URL="https://serp.api.zenrows.com/v1/targets/google/search/${ENCODED_QUERY}"
 
-          BODY_FILE=$(mktemp)
-          HEADERS_FILE=$(mktemp)
-          trap 'rm -f "$BODY_FILE" "$HEADERS_FILE"' EXIT
+          run_test() {
+            local LABEL="$1"
+            local URL="$2"
+            local BODY_FILE HEADERS_FILE HTTP_STATUS
+            BODY_FILE=$(mktemp)
+            HEADERS_FILE=$(mktemp)
 
-          HTTP_STATUS=$(curl --silent --show-error --location \
-            --connect-timeout 15 --max-time 60 \
-            --dump-header "$HEADERS_FILE" \
-            --output "$BODY_FILE" \
-            --write-out '%{http_code}' \
-            --request GET \
-            --header 'Accept: application/json' \
-            "$URL")
+            echo ''
+            echo '=========================================='
+            echo "ZenRows diagnostic: $LABEL"
+            echo "Keyword: $KEYWORD"
+            echo 'API key: present (value hidden)'
+            echo "Endpoint: $BASE_URL"
+            echo "Parameters: $(echo "$URL" | sed -E 's/[?&]apikey=[^&]*/?apikey=[REDACTED]/')"
 
-          echo "HTTP status: $HTTP_STATUS"
-          echo 'Response headers:'
-          sed -E 's/([Aa]uthorization:).*/\1 [REDACTED]/; s/(apikey=)[^&[:space:]]+?/\1[REDACTED]/I' "$HEADERS_FILE" | head -40
+            HTTP_STATUS=$(curl --silent --show-error --location \
+              --connect-timeout 15 --max-time 60 \
+              --dump-header "$HEADERS_FILE" \
+              --output "$BODY_FILE" \
+              --write-out '%{http_code}' \
+              --request GET \
+              --header 'Accept: application/json' \
+              "$URL")
 
-          echo 'Response metadata/body preview (credentials redacted):'
-          node - "$BODY_FILE" <<'NODE'
+            echo "HTTP status: $HTTP_STATUS"
+            echo 'Response headers:'
+            grep -Ei '^(HTTP/|content-type:|content-length:|concurrency-|retry-after:|x-)' "$HEADERS_FILE" | head -40 || true
+
+            echo 'Response metadata/body preview:'
+            node - "$BODY_FILE" <<'NODE'
           const fs = require('fs');
-          const file = process.argv[2];
-          const raw = fs.readFileSync(file, 'utf8');
+          const raw = fs.readFileSync(process.argv[2], 'utf8');
           let value;
-          try {
-            value = JSON.parse(raw);
-          } catch {
-            value = raw;
-          }
-
+          try { value = JSON.parse(raw); } catch { value = raw; }
           if (value && typeof value === 'object') {
             const safe = { ...value };
             for (const key of Object.keys(safe)) {
-              if (/api.?key|token|authorization|secret|password/i.test(key)) {
-                safe[key] = '[REDACTED]';
-              }
+              if (/api.?key|token|authorization|secret|password/i.test(key)) safe[key] = '[REDACTED]';
             }
             if (Array.isArray(safe.organic_results)) {
               safe.organic_results_count = safe.organic_results.length;
@@ -110,12 +105,22 @@ jobs:
           }
           NODE
 
-          if [ "$HTTP_STATUS" -ge 200 ] && [ "$HTTP_STATUS" -lt 300 ]; then
-            echo 'ZenRows diagnostic: SUCCESS'
-          else
-            echo 'ZenRows diagnostic: FAILED'
-            exit 1
-          fi
+            rm -f "$BODY_FILE" "$HEADERS_FILE"
+            return 0
+          }
+
+          # Test A: current localized request.
+          run_test 'A — localized Google request (country=in, tld=.co.in)' \
+            "${BASE_URL}?apikey=${ZENROWS_API_KEY}&country=in&tld=.co.in"
+
+          # Test B: minimum request, removing localization parameters.
+          run_test 'B — minimum Google request (no country/tld)' \
+            "${BASE_URL}?apikey=${ZENROWS_API_KEY}"
+
+          echo ''
+          echo '=========================================='
+          echo 'Diagnostic complete. No repository data was modified.'
+          echo '=========================================='
 
       - name: Check rankings
         if: github.event_name != 'workflow_dispatch' || inputs.diagnostic != true
