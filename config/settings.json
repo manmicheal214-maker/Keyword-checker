@@ -1,14 +1,93 @@
 {
-  "domain": "example.com",
-  "country": "India",
-  "country_code": "in",
-  "language": "en",
-  "google_tld": ".co.in",
-  "search_engine": "google",
-  "max_keywords": 50,
-  "max_position": 100,
-  "request_delay_ms": 2000,
-  "request_timeout_ms": 60000,
-  "max_retries": 2,
-  "history_days": 365
+  "domains": [
+    {
+      "domain": "cricstrike.com",
+      "keywords": [
+        "Cricstrike",
+        "Cricstrike Login",
+        "Cricstrike Signup",
+        "Cricstrike Official Website",
+        "Cricstrike app",
+        "Cricstrike app download",
+        "Cricstrike register",
+        "Cricstrike platform"
+      ]
+    },
+    {
+      "domain": "khelo24race.com",
+      "keywords": [
+        "Khelo24race",
+        "Khelo24race Login",
+        "Khelo24race Signup",
+        "Khelo24race Official Website",
+        "Khelo24race app",
+        "Khelo24race app download",
+        "Khelo24race register",
+        "Khelo24race platform"
+      ]
+    },
+    {
+      "domain": "kheloexch99.com",
+      "keywords": [
+        "Kheloexch",
+        "Kheloexch99",
+        "Kheloexch 99",
+        "Kheloexch Login",
+        "Kheloexch Signup",
+        "Kheloexch Official Website",
+        "Kheloexch app",
+        "Kheloexch app download",
+        "Kheloexch register",
+        "Khelo Exchange",
+        "Kheloexch Account",
+        "Kheloexch Sign In",
+        "Kheloexch Customer Care",
+        "Kheloexch Official Link",
+        "Kheloexch Portal",
+        "Kheloexch99 App Download",
+        "Kheloexch99 Account",
+        "Kheloexch99 Register",
+        "Kheloexch99 Login",
+        "Kheloexch99 Platform",
+        "Kheloexch99 Website"
+      ]
+    },
+    {
+      "domain": "cricmatch247.com",
+      "keywords": [
+        "Cricmatch",
+        "Cricmatch247",
+        "Cricmatch Login",
+        "Cricmatch Signup",
+        "Cricmatch Official Website",
+        "Cricmatch app",
+        "Cricmatch app download",
+        "Cricmatch register",
+        "Cricmatch platform",
+        "Cricmatch247 Official Website",
+        "Cricmatch247 Register",
+        "Cricmatch247 Signup",
+        "Cricmatch247 App",
+        "Cricmatch247 Login",
+        "Cricmatch247 Website"
+      ]
+    },
+    {
+      "domain": "khelofun.com",
+      "keywords": [
+        "Khelofun",
+        "Khelofun Login",
+        "Khelofun Signup",
+        "Khelofun Official Website",
+        "Khelofun app",
+        "Khelofun app download",
+        "Khelofun Register",
+        "Khelofun platform",
+        "Khelofun portal",
+        "Khelofun Affiliates",
+        "Khelofun Customer Care",
+        "Khelofun Official Link"
+      ]
+    }
+  ]
 }
