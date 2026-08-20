@@ -16,6 +16,11 @@ on:
         default: ''
         type: string
 
+# Prevent two ranking runs from generating competing commits at the same time.
+concurrency:
+  group: rankings-main
+  cancel-in-progress: false
+
 jobs:
   check-rankings:
     runs-on: ubuntu-latest
@@ -25,6 +30,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -42,85 +49,34 @@ jobs:
         shell: bash
         run: |
           set -uo pipefail
-
-          if [ -z "${ZENROWS_API_KEY:-}" ]; then
-            echo 'ERROR: ZENROWS_API_KEY secret is missing or empty.'
-            exit 1
-          fi
-
+          if [ -z "${ZENROWS_API_KEY:-}" ]; then echo 'ERROR: ZENROWS_API_KEY secret is missing or empty.'; exit 1; fi
           KEYWORD="$DIAGNOSTIC_KEYWORD"
-          if [ -z "$KEYWORD" ]; then
-            KEYWORD=$(node -e "const fs=require('fs'); const c=JSON.parse(fs.readFileSync('config/keywords.json','utf8')); process.stdout.write(c.domains[0].keywords[0]);")
-          fi
-
+          if [ -z "$KEYWORD" ]; then KEYWORD=$(node -e "const fs=require('fs'); const c=JSON.parse(fs.readFileSync('config/keywords.json','utf8')); process.stdout.write(c.domains[0].keywords[0]);"); fi
           ENCODED_QUERY=$(node -e "process.stdout.write(encodeURIComponent(process.argv[1]))" "$KEYWORD")
           BASE_URL="https://serp.api.zenrows.com/v1/targets/google/search/${ENCODED_QUERY}"
-
           run_test() {
-            local LABEL="$1"
-            local URL="$2"
-            local BODY_FILE HEADERS_FILE HTTP_STATUS
-            BODY_FILE=$(mktemp)
-            HEADERS_FILE=$(mktemp)
-
-            echo ''
-            echo '=========================================='
-            echo "ZenRows diagnostic: $LABEL"
-            echo "Keyword: $KEYWORD"
-            echo 'API key: present (value hidden)'
-            echo "Endpoint: $BASE_URL"
-            echo "Parameters: $(echo "$URL" | sed -E 's/[?&]apikey=[^&]*/?apikey=[REDACTED]/')"
-
-            HTTP_STATUS=$(curl --silent --show-error --location \
-              --connect-timeout 15 --max-time 60 \
-              --dump-header "$HEADERS_FILE" \
-              --output "$BODY_FILE" \
-              --write-out '%{http_code}' \
-              --request GET \
-              --header 'Accept: application/json' \
-              "$URL")
-
-            echo "HTTP status: $HTTP_STATUS"
-            echo 'Response headers:'
-            grep -Ei '^(HTTP/|content-type:|content-length:|concurrency-|retry-after:|x-)' "$HEADERS_FILE" | head -40 || true
-
+            local LABEL="$1" URL="$2" BODY_FILE HEADERS_FILE HTTP_STATUS
+            BODY_FILE=$(mktemp); HEADERS_FILE=$(mktemp)
+            echo ''; echo '=========================================='; echo "ZenRows diagnostic: $LABEL"; echo "Keyword: $KEYWORD"; echo 'API key: present (value hidden)'; echo "Endpoint: $BASE_URL"; echo "Parameters: $(echo "$URL" | sed -E 's/[?&]apikey=[^&]*/?apikey=[REDACTED]/')"
+            HTTP_STATUS=$(curl --silent --show-error --location --connect-timeout 15 --max-time 60 --dump-header "$HEADERS_FILE" --output "$BODY_FILE" --write-out '%{http_code}' --request GET --header 'Accept: application/json' "$URL")
+            echo "HTTP status: $HTTP_STATUS"; echo 'Response headers:'; grep -Ei '^(HTTP/|content-type:|content-length:|concurrency-|retry-after:|x-)' "$HEADERS_FILE" | head -40 || true
             echo 'Response metadata/body preview:'
             node - "$BODY_FILE" <<'NODE'
           const fs = require('fs');
           const raw = fs.readFileSync(process.argv[2], 'utf8');
-          let value;
-          try { value = JSON.parse(raw); } catch { value = raw; }
+          let value; try { value = JSON.parse(raw); } catch { value = raw; }
           if (value && typeof value === 'object') {
             const safe = { ...value };
-            for (const key of Object.keys(safe)) {
-              if (/api.?key|token|authorization|secret|password/i.test(key)) safe[key] = '[REDACTED]';
-            }
-            if (Array.isArray(safe.organic_results)) {
-              safe.organic_results_count = safe.organic_results.length;
-              delete safe.organic_results;
-            }
+            for (const key of Object.keys(safe)) if (/api.?key|token|authorization|secret|password/i.test(key)) safe[key] = '[REDACTED]';
+            if (Array.isArray(safe.organic_results)) { safe.organic_results_count = safe.organic_results.length; delete safe.organic_results; }
             console.log(JSON.stringify(safe, null, 2).slice(0, 8000));
-          } else {
-            console.log(String(value).slice(0, 4000));
-          }
+          } else console.log(String(value).slice(0, 4000));
           NODE
-
             rm -f "$BODY_FILE" "$HEADERS_FILE"
-            return 0
           }
-
-          # Test A: current localized request.
-          run_test 'A — localized Google request (country=in, tld=.co.in)' \
-            "${BASE_URL}?apikey=${ZENROWS_API_KEY}&country=in&tld=.co.in"
-
-          # Test B: minimum request, removing localization parameters.
-          run_test 'B — minimum Google request (no country/tld)' \
-            "${BASE_URL}?apikey=${ZENROWS_API_KEY}"
-
-          echo ''
-          echo '=========================================='
-          echo 'Diagnostic complete. No repository data was modified.'
-          echo '=========================================='
+          run_test 'A — localized Google request (country=in, tld=.co.in)' "${BASE_URL}?apikey=${ZENROWS_API_KEY}&country=in&tld=.co.in"
+          run_test 'B — minimum Google request (no country/tld)' "${BASE_URL}?apikey=${ZENROWS_API_KEY}"
+          echo ''; echo '=========================================='; echo 'Diagnostic complete. No repository data was modified.'; echo '=========================================='
 
       - name: Check rankings
         if: github.event_name != 'workflow_dispatch' || inputs.diagnostic != true
@@ -136,6 +92,12 @@ jobs:
           git add data/rankings.json data/history.json
           git diff --quiet && git diff --staged --quiet || git commit -m "chore: update rankings and history data"
 
+      - name: Sync with remote before push
+        if: github.event_name != 'workflow_dispatch' || inputs.diagnostic != true
+        run: |
+          git fetch origin main
+          git rebase origin/main
+
       - name: Push changes
         if: github.event_name != 'workflow_dispatch' || inputs.diagnostic != true
-        run: git push
+        run: git push origin HEAD:main
