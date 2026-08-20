@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "India Google keyword rank checker using GitHub Actions and ZenRows",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "check-rankings": "node scripts/check-rankings.js"
   },
