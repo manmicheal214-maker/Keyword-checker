@@ -1003,7 +1003,7 @@ async function main() {
           console.log(
             `  Position: ${result.position}` +
             ` | Previous: ` +
-            `${result.previousPosition ?? 'N/A'}` +
+            `${result.previous_position ?? 'N/A'}` +
             ` | Change: ` +
             `${result.change ?? 'N/A'}`
           );
