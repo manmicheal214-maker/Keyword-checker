@@ -5,6 +5,17 @@ on:
     # Run daily at 9:00 AM IST (03:30 UTC)
     - cron: '30 3 * * *'
   workflow_dispatch:
+    inputs:
+      diagnostic:
+        description: 'Run a safe one-keyword ZenRows diagnostic instead of the full ranking check'
+        required: false
+        default: false
+        type: boolean
+      diagnostic_keyword:
+        description: 'Keyword to test (defaults to the first configured keyword)'
+        required: false
+        default: ''
+        type: string
 
 jobs:
   check-rankings:
@@ -25,12 +36,95 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: ZenRows diagnostic
+        if: github.event_name == 'workflow_dispatch' && inputs.diagnostic == true
+        env:
+          ZENROWS_API_KEY: ${{ secrets.ZENROWS_API_KEY }}
+          DIAGNOSTIC_KEYWORD: ${{ inputs.diagnostic_keyword }}
+        shell: bash
+        run: |
+          set -uo pipefail
+
+          if [ -z "${ZENROWS_API_KEY:-}" ]; then
+            echo 'ERROR: ZENROWS_API_KEY secret is missing or empty.'
+            exit 1
+          fi
+
+          KEYWORD="$DIAGNOSTIC_KEYWORD"
+          if [ -z "$KEYWORD" ]; then
+            KEYWORD=$(node -e "const fs=require('fs'); const c=JSON.parse(fs.readFileSync('config/keywords.json','utf8')); process.stdout.write(c.domains[0].keywords[0]);")
+          fi
+
+          echo "Testing one keyword: $KEYWORD"
+          echo 'API key: present (value hidden)'
+          echo 'Endpoint: https://serp.api.zenrows.com/v1/targets/google/search/{keyword}'
+          echo 'Country: in'
+          echo 'TLD: .co.in'
+
+          ENCODED_QUERY=$(node -e "process.stdout.write(encodeURIComponent(process.argv[1]))" "$KEYWORD")
+          URL="https://serp.api.zenrows.com/v1/targets/google/search/${ENCODED_QUERY}?apikey=${ZENROWS_API_KEY}&country=in&tld=.co.in"
+
+          BODY_FILE=$(mktemp)
+          HEADERS_FILE=$(mktemp)
+          trap 'rm -f "$BODY_FILE" "$HEADERS_FILE"' EXIT
+
+          HTTP_STATUS=$(curl --silent --show-error --location \
+            --connect-timeout 15 --max-time 60 \
+            --dump-header "$HEADERS_FILE" \
+            --output "$BODY_FILE" \
+            --write-out '%{http_code}' \
+            --request GET \
+            --header 'Accept: application/json' \
+            "$URL")
+
+          echo "HTTP status: $HTTP_STATUS"
+          echo 'Response headers:'
+          sed -E 's/([Aa]uthorization:).*/\1 [REDACTED]/; s/(apikey=)[^&[:space:]]+?/\1[REDACTED]/I' "$HEADERS_FILE" | head -40
+
+          echo 'Response metadata/body preview (credentials redacted):'
+          node - "$BODY_FILE" <<'NODE'
+          const fs = require('fs');
+          const file = process.argv[2];
+          const raw = fs.readFileSync(file, 'utf8');
+          let value;
+          try {
+            value = JSON.parse(raw);
+          } catch {
+            value = raw;
+          }
+
+          if (value && typeof value === 'object') {
+            const safe = { ...value };
+            for (const key of Object.keys(safe)) {
+              if (/api.?key|token|authorization|secret|password/i.test(key)) {
+                safe[key] = '[REDACTED]';
+              }
+            }
+            if (Array.isArray(safe.organic_results)) {
+              safe.organic_results_count = safe.organic_results.length;
+              delete safe.organic_results;
+            }
+            console.log(JSON.stringify(safe, null, 2).slice(0, 8000));
+          } else {
+            console.log(String(value).slice(0, 4000));
+          }
+          NODE
+
+          if [ "$HTTP_STATUS" -ge 200 ] && [ "$HTTP_STATUS" -lt 300 ]; then
+            echo 'ZenRows diagnostic: SUCCESS'
+          else
+            echo 'ZenRows diagnostic: FAILED'
+            exit 1
+          fi
+
       - name: Check rankings
+        if: github.event_name != 'workflow_dispatch' || inputs.diagnostic != true
         run: npm run check-rankings
         env:
           ZENROWS_API_KEY: ${{ secrets.ZENROWS_API_KEY }}
 
       - name: Commit changes
+        if: github.event_name != 'workflow_dispatch' || inputs.diagnostic != true
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -38,4 +132,5 @@ jobs:
           git diff --quiet && git diff --staged --quiet || git commit -m "chore: update rankings and history data"
 
       - name: Push changes
+        if: github.event_name != 'workflow_dispatch' || inputs.diagnostic != true
         run: git push
