@@ -1,0 +1,14 @@
+{
+  "domain": "example.com",
+  "country": "India",
+  "country_code": "in",
+  "language": "en",
+  "google_tld": ".co.in",
+  "search_engine": "google",
+  "max_keywords": 50,
+  "max_position": 100,
+  "request_delay_ms": 2000,
+  "request_timeout_ms": 60000,
+  "max_retries": 2,
+  "history_days": 365
+}
