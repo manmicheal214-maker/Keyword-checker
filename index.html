@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>India SEO Rank Tracker</title>
+  <meta name="description" content="Track Google keyword rankings in India.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+      background: #f5f7fb;
+      color: #172033;
+      line-height: 1.5;
+    }
+
+    .container {
+      width: min(1400px, 94%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #111827, #1e3a8a);
+      color: white;
+      padding: 28px 0;
+      margin-bottom: 28px;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand h1 {
+      font-size: 26px;
+      margin-bottom: 4px;
+    }
+
+    .brand p {
+      color: #cbd5e1;
+      font-size: 14px;
+    }
+
+    .india-badge {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .stat-card {
+      background: white;
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 3px 15px rgba(15, 23, 42, .06);
+      border: 1px solid #e5e7eb;
+    }
+
+    .stat-label {
+      color: #64748b;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .stat-value {
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    .dashboard {
+      background: white;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 3px 15px rgba(15, 23, 42, .06);
+      overflow: hidden;
+    }
+
+    .toolbar {
+      padding: 18px 20px;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .toolbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    input,
+    select {
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 14px;
+      background: white;
+      color: #172033;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, .1);
+    }
+
+    #search {
+      min-width: 260px;
+    }
+
+    button {
+      border: 0;
+      border-radius: 8px;
+      padding: 10px 16px;
+      background: #2563eb;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .export-btn {
+      background: #0f766e;
+    }
+
+    .export-btn:hover {
+      background: #115e59;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 850px;
+    }
+
+    th {
+      background: #f8fafc;
+      color: #64748b;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      padding: 13px 16px;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    td {
+      padding: 15px 16px;
+      border-bottom: 1px solid #eef0f4;
+      font-size: 14px;
+    }
+
+    tr:hover td {
+      background: #fafcff;
+    }
+
+    .keyword {
+      font-weight: 600;
+      color: #172033;
+    }
+
+    .position {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .top3 {
+      color: #15803d;
+    }
+
+    .top10 {
+      color: #2563eb;
+    }
+
+    .not-ranking {
+      color: #94a3b8;
+      font-weight: 600;
+    }
+
+    .change {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 700;
+    }
+
+    .up {
+      color: #16a34a;
+    }
+
+    .down {
+      color: #dc2626;
+    }
+
+    .same {
+      color: #64748b;
+    }
+
+    .url {
+      color: #2563eb;
+      text-decoration: none;
+      max-width: 280px;
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .url:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 25px 0 40px;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+    }
+
+    .empty {
+      padding: 60px 20px;
+      text-align: center;
+      color: #64748b;
+    }
+
+    .error {
+      padding: 20px;
+      background: #fef2f2;
+      color: #991b1b;
+      border-bottom: 1px solid #fecaca;
+    }
+
+    @media (max-width: 900px) {
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-content {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stat-value {
+        font-size: 23px;
+      }
+
+      #search {
+        min-width: 100%;
+      }
+
+      .toolbar-left {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-content">
+    <div class="brand">
+      <h1>🇮🇳 India SEO Rank Tracker</h1>
+      <p>Google keyword position monitoring</p>
+    </div>
+
+    <div class="india-badge">
+      🇮🇳 Google India · 50 Keywords
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="stats">
+
+    <div class="stat-card">
+      <div class="stat-label">Total Keywords</div>
+      <div class="stat-value" id="totalKeywords">—</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-label">Average Position</div>
+      <div class="stat-value" id="averagePosition">—</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-label">Top 10</div>
+      <div class="stat-value" id="top10">—</div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-label">Top 3</div>
+      <div class="stat-value" id="top3">—</div>
+    </div>
+
+  </section>
+
+  <section class="dashboard">
+
+    <div class="toolbar">
+
+      <div class="toolbar-left">
+
+        <input
+          type="search"
+          id="search"
+          placeholder="Search keyword..."
+          autocomplete="off"
+        >
+
+        <select id="positionFilter">
+          <option value="all">All positions</option>
+          <option value="top3">Top 3</option>
+          <option value="top10">Top 10</option>
+          <option value="top20">Top 20</option>
+          <option value="top50">Top 50</option>
+          <option value="not-ranking">Not ranking</option>
+        </select>
+
+        <button onclick="loadRankings()">
+          ↻ Refresh
+        </button>
+
+      </div>
+
+      <div>
+        <button class="export-btn" onclick="exportCSV()">
+          ↓ Export CSV
+        </button>
+      </div>
+
+    </div>
+
+    <div id="errorMessage"></div>
+
+    <div class="table-wrapper">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Keyword</th>
+            <th>Position</th>
+            <th>Previous</th>
+            <th>Change</th>
+            <th>Ranking URL</th>
+            <th>Checked</th>
+          </tr>
+        </thead>
+
+        <tbody id="rankingsTable">
+          <tr>
+            <td colspan="7">
+              <div class="empty">
+                Loading rankings...
+              </div>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+  <div class="footer">
+
+    <div class="status">
+      <span class="status-dot"></span>
+      <span id="lastUpdated">Loading...</span>
+    </div>
+
+    <p style="margin-top:8px;">
+      Rankings are automatically updated by GitHub Actions.
+    </p>
+
+  </div>
+
+</main>
+
+
+<script>
+
+  let rankings = [];
+
+  /*
+   * GitHub Actions will generate this file.
+   *
+   * Expected format:
+   *
+   * {
+   *   "last_updated": "2026-08-20T03:30:00Z",
+   *   "domain": "example.com",
+   *   "country": "India",
+   *   "keywords": [
+   *     {
+   *       "keyword": "seo agency india",
+   *       "position": 4,
+   *       "previous_position": 6,
+   *       "url": "https://example.com/seo",
+   *       "checked_at": "2026-08-20T03:30:00Z"
+   *     }
+   *   ]
+   * }
+   */
+
+  async function loadRankings() {
+
+    const errorMessage = document.getElementById("errorMessage");
+
+    errorMessage.innerHTML = "";
+
+    try {
+
+      /*
+       * Cache-busting parameter ensures GitHub Pages
+       * doesn't display yesterday's JSON from cache.
+       */
+
+      const response = await fetch(
+        "data/rankings.json?ts=" + Date.now()
+      );
+
+      if (!response.ok) {
+        throw new Error("Could not load rankings.json");
+      }
+
+      const data = await response.json();
+
+      rankings = Array.isArray(data)
+        ? data
+        : (data.keywords || []);
+
+      updateStats(rankings);
+      renderTable();
+
+      const updated = data.last_updated || data.updated_at;
+
+      if (updated) {
+        document.getElementById("lastUpdated").textContent =
+          "Last updated: " + formatDate(updated);
+      } else {
+        document.getElementById("lastUpdated").textContent =
+          "Rankings loaded";
+      }
+
+    } catch (error) {
+
+      console.error(error);
+
+      errorMessage.innerHTML = `
+        <div class="error">
+          Unable to load ranking data.
+          Make sure <strong>data/rankings.json</strong> exists.
+        </div>
+      `;
+
+      rankings = [];
+      updateStats([]);
+      renderTable();
+    }
+  }
+
+
+  function updateStats(data) {
+
+    const total = data.length;
+
+    const ranked = data.filter(item =>
+      Number.isFinite(Number(item.position)) &&
+      Number(item.position) > 0
+    );
+
+    const top10 = ranked.filter(item =>
+      Number(item.position) <= 10
+    ).length;
+
+    const top3 = ranked.filter(item =>
+      Number(item.position) <= 3
+    ).length;
+
+    const average = ranked.length
+      ? ranked.reduce(
+          (sum, item) => sum + Number(item.position),
+          0
+        ) / ranked.length
+      : 0;
+
+    document.getElementById("totalKeywords").textContent = total;
+
+    document.getElementById("averagePosition").textContent =
+      average ? average.toFixed(1) : "—";
+
+    document.getElementById("top10").textContent = top10;
+
+    document.getElementById("top3").textContent = top3;
+  }
+
+
+  function renderTable() {
+
+    const table = document.getElementById("rankingsTable");
+
+    const search = document
+      .getElementById("search")
+      .value
+      .toLowerCase()
+      .trim();
+
+    const filter = document
+      .getElementById("positionFilter")
+      .value;
+
+    const filtered = rankings.filter(item => {
+
+      const keyword = String(
+        item.keyword || ""
+      ).toLowerCase();
+
+      const position = Number(item.position);
+
+      if (
+        search &&
+        !keyword.includes(search)
+      ) {
+        return false;
+      }
+
+      if (filter === "top3") {
+        return position >= 1 && position <= 3;
+      }
+
+      if (filter === "top10") {
+        return position >= 1 && position <= 10;
+      }
+
+      if (filter === "top20") {
+        return position >= 1 && position <= 20;
+      }
+
+      if (filter === "top50") {
+        return position >= 1 && position <= 50;
+      }
+
+      if (filter === "not-ranking") {
+        return !position || position <= 0;
+      }
+
+      return true;
+    });
+
+
+    if (!filtered.length) {
+
+      table.innerHTML = `
+        <tr>
+          <td colspan="7">
+            <div class="empty">
+              No keywords found.
+            </div>
+          </td>
+        </tr>
+      `;
+
+      return;
+    }
+
+
+    table.innerHTML = filtered.map((item, index) => {
+
+      const position = Number(item.position);
+
+      const previous = Number(item.previous_position);
+
+      let positionHTML = "—";
+      let positionClass = "not-ranking";
+
+      if (position > 0) {
+
+        positionClass =
+          position <= 3
+            ? "top3"
+            : position <= 10
+              ? "top10"
+              : "";
+
+        positionHTML =
+          `<span class="position ${positionClass}">
+            ${position}
+          </span>`;
+      }
+
+
+      let changeHTML = `<span class="change same">—</span>`;
+
+      if (
+        position > 0 &&
+        previous > 0
+      ) {
+
+        const change = previous - position;
+
+        if (change > 0) {
+
+          changeHTML = `
+            <span class="change up">
+              ↑ ${change}
+            </span>
+          `;
+
+        } else if (change < 0) {
+
+          changeHTML = `
+            <span class="change down">
+              ↓ ${Math.abs(change)}
+            </span>
+          `;
+
+        } else {
+
+          changeHTML = `
+            <span class="change same">
+              — 0
+            </span>
+          `;
+        }
+      }
+
+
+      const url = item.url || "";
+
+      const urlHTML = url
+        ? `<a
+             class="url"
+             href="${escapeHTML(url)}"
+             target="_blank"
+             rel="noopener noreferrer"
+           >
+             ${escapeHTML(url)}
+           </a>`
+        : "—";
+
+
+      return `
+        <tr>
+
+          <td>${index + 1}</td>
+
+          <td>
+            <span class="keyword">
+              ${escapeHTML(item.keyword || "")}
+            </span>
+          </td>
+
+          <td>
+            ${positionHTML}
+          </td>
+
+          <td>
+            ${
+              previous > 0
+                ? previous
+                : "—"
+            }
+          </td>
+
+          <td>
+            ${changeHTML}
+          </td>
+
+          <td>
+            ${urlHTML}
+          </td>
+
+          <td>
+            ${
+              item.checked_at
+                ? formatDate(item.checked_at)
+                : "—"
+            }
+          </td>
+
+        </tr>
+      `;
+
+    }).join("");
+  }
+
+
+  function formatDate(dateString) {
+
+    const date = new Date(dateString);
+
+    if (Number.isNaN(date.getTime())) {
+      return dateString;
+    }
+
+    return date.toLocaleString("en-IN", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+      timeZone: "Asia/Kolkata"
+    });
+  }
+
+
+  function escapeHTML(value) {
+
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+
+  function exportCSV() {
+
+    if (!rankings.length) {
+      alert("No ranking data available.");
+      return;
+    }
+
+    const headers = [
+      "Keyword",
+      "Position",
+      "Previous Position",
+      "Change",
+      "URL",
+      "Checked At"
+    ];
+
+    const rows = rankings.map(item => {
+
+      const position = Number(item.position) || 0;
+      const previous = Number(item.previous_position) || 0;
+
+      return [
+        item.keyword || "",
+        position || "",
+        previous || "",
+        position && previous
+          ? previous - position
+          : "",
+        item.url || "",
+        item.checked_at || ""
+      ];
+    });
+
+
+    const csv = [
+      headers,
+      ...rows
+    ]
+      .map(row =>
+        row.map(value =>
+          `"${String(value).replace(/"/g, '""')}"`
+        ).join(",")
+      )
+      .join("\n");
+
+
+    const blob = new Blob(
+      [csv],
+      { type: "text/csv;charset=utf-8;" }
+    );
+
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+
+    link.href = url;
+    link.download =
+      "india-keyword-rankings-" +
+      new Date().toISOString().slice(0, 10) +
+      ".csv";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+    URL.revokeObjectURL(url);
+  }
+
+
+  document
+    .getElementById("search")
+    .addEventListener("input", renderTable);
+
+
+  document
+    .getElementById("positionFilter")
+    .addEventListener("change", renderTable);
+
+
+  loadRankings();
+
+</script>
+
+</body>
+</html>
