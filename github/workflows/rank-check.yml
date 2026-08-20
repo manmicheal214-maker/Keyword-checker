@@ -1,0 +1,73 @@
+name: Daily India Rank Check
+
+on:
+  schedule:
+    - cron: "30 3 * * *"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rank-check
+  cancel-in-progress: false
+
+jobs:
+  check-rankings:
+    name: Check Google India Rankings
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Verify configuration
+        run: |
+          node --version
+          test -f config/keywords.json
+          test -f config/settings.json
+          test -f data/rankings.json
+          test -f data/history.json
+          test -f scripts/check-rankings.js
+
+      - name: Run rank checker
+        env:
+          ZENROWS_API_KEY: ${{ secrets.ZENROWS_API_KEY }}
+        run: |
+          npm run check-rankings
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet -- data/rankings.json data/history.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit ranking results
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/rankings.json data/history.json
+
+          git commit -m "Update keyword rankings"
+
+          git push
+
+      - name: No changes
+        if: steps.changes.outputs.changed == 'false'
+        run: |
+          echo "No ranking data changes to commit."
