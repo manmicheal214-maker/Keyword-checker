@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-22T04:01:43.725Z",
+  "last_updated": "2026-08-23T04:06:56.271Z",
   "history": {
     "cricstrike.com": {
       "Cricstrike": [
@@ -16,6 +16,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": null,
           "status": "error"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Cricstrike Login": [
@@ -30,6 +35,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
@@ -48,6 +58,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Cricstrike Official Website": [
@@ -62,6 +77,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 2,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 2,
           "status": "ranking"
         }
@@ -80,6 +100,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Cricstrike app download": [
@@ -94,6 +119,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
@@ -112,6 +142,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Cricstrike platform": [
@@ -126,6 +161,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
@@ -146,6 +186,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Khelo24race Login": [
@@ -160,6 +205,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": null,
+          "status": "not_ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": null,
           "status": "not_ranking"
         }
@@ -178,6 +228,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": null,
           "status": "not_ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": null,
+          "status": "not_ranking"
         }
       ],
       "Khelo24race Official Website": [
@@ -192,6 +247,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
@@ -210,6 +270,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": null,
           "status": "not_ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": null,
+          "status": "not_ranking"
         }
       ],
       "Khelo24race app download": [
@@ -224,6 +289,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": null,
+          "status": "not_ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": null,
           "status": "not_ranking"
         }
@@ -242,6 +312,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": null,
           "status": "not_ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": null,
+          "status": "not_ranking"
         }
       ],
       "Khelo24race platform": [
@@ -256,6 +331,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
@@ -276,6 +356,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Kheloexch99": [
@@ -290,6 +375,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
@@ -308,6 +398,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Kheloexch Login": [
@@ -322,6 +417,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
@@ -340,6 +440,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": null,
+          "status": "not_ranking"
         }
       ],
       "Kheloexch Official Website": [
@@ -354,6 +459,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": null,
+          "status": "not_ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": null,
           "status": "not_ranking"
         }
@@ -372,6 +482,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Kheloexch app download": [
@@ -386,6 +501,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
@@ -404,6 +524,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": null,
           "status": "not_ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": null,
+          "status": "not_ranking"
         }
       ],
       "Khelo Exchange": [
@@ -418,6 +543,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
@@ -436,6 +566,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": null,
           "status": "not_ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": null,
+          "status": "not_ranking"
         }
       ],
       "Kheloexch Sign In": [
@@ -450,6 +585,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": null,
+          "status": "not_ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": null,
           "status": "not_ranking"
         }
@@ -468,6 +608,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Kheloexch Official Link": [
@@ -482,6 +627,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": null,
+          "status": "not_ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": null,
           "status": "not_ranking"
         }
@@ -500,6 +650,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Kheloexch99 App Download": [
@@ -514,6 +669,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
@@ -532,6 +692,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": null,
+          "status": "not_ranking"
         }
       ],
       "Kheloexch99 Register": [
@@ -546,6 +711,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": null,
+          "status": "not_ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": null,
           "status": "not_ranking"
         }
@@ -564,6 +734,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": null,
+          "status": "error"
         }
       ],
       "Kheloexch99 Platform": [
@@ -580,6 +755,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": null,
           "status": "not_ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Kheloexch99 Website": [
@@ -594,6 +774,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
@@ -614,6 +799,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Cricmatch247": [
@@ -628,6 +818,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
@@ -646,6 +841,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Cricmatch Signup": [
@@ -660,6 +860,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": null,
+          "status": "not_ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": null,
           "status": "not_ranking"
         }
@@ -678,6 +883,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": null,
           "status": "not_ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": null,
+          "status": "not_ranking"
         }
       ],
       "Cricmatch app": [
@@ -692,6 +902,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
@@ -710,6 +925,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Cricmatch register": [
@@ -724,6 +944,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": null,
+          "status": "not_ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": null,
           "status": "not_ranking"
         }
@@ -742,6 +967,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Cricmatch247 Official Website": [
@@ -756,6 +986,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
@@ -774,6 +1009,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Cricmatch247 Signup": [
@@ -788,6 +1028,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
@@ -806,6 +1051,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Cricmatch247 Login": [
@@ -822,6 +1072,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Cricmatch247 Website": [
@@ -836,6 +1091,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
@@ -856,6 +1116,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Khelofun Login": [
@@ -870,6 +1135,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
@@ -888,6 +1158,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Khelofun Official Website": [
@@ -902,6 +1177,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
@@ -920,6 +1200,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Khelofun app download": [
@@ -934,6 +1219,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
@@ -952,6 +1242,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Khelofun platform": [
@@ -966,6 +1261,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
@@ -984,6 +1284,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Khelofun Affiliates": [
@@ -998,6 +1303,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
@@ -1016,6 +1326,11 @@
           "checked_at": "2026-08-22T04:01:43.725Z",
           "position": null,
           "status": "not_ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
+          "position": null,
+          "status": "not_ranking"
         }
       ],
       "Khelofun Official Link": [
@@ -1030,6 +1345,11 @@
         },
         {
           "checked_at": "2026-08-22T04:01:43.725Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-08-23T04:06:56.271Z",
           "position": 1,
           "status": "ranking"
         }
