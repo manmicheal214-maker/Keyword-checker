@@ -59,13 +59,8 @@ function match(link, target) {
 function firstUrl(k, s) {
   const u = new URL('https://serp.api.zenrows.com/v1/targets/google/search/' + encodeURIComponent(k));
   u.searchParams.set('apikey', KEY);
-
-  // Explicitly target Google India. The previous implementation left both
-  // country and TLD empty, which can return a different SERP from the one
-  // this tracker is supposed to measure.
   if (s.country_code) u.searchParams.set('country', s.country_code);
   if (s.google_tld) u.searchParams.set('tld', s.google_tld);
-
   return u;
 }
 
@@ -81,14 +76,19 @@ async function get(u, s, label) {
       try { d = txt ? JSON.parse(txt) : null; } catch {}
 
       if (!r.ok) {
-        throw new Error('ZenRows HTTP ' + r.status + (d?.detail ? ': ' + d.detail : ''));
+        const e = new Error('ZenRows HTTP ' + r.status + (d?.detail ? ': ' + d.detail : ''));
+        e.httpStatus = r.status;
+        throw e;
       }
       if (!d || typeof d !== 'object') throw new Error('ZenRows returned invalid JSON.');
       return d;
     } catch (e) {
       last = e;
       if (a < Number(s.max_retries)) {
-        const ms = Math.min(10000, 1000 * 2 ** a);
+        // ZenRows 5xx responses are server-side/transient failures. Use a
+        // longer backoff for them instead of immediately burning the next
+        // request against the same failing backend path.
+        const ms = e.httpStatus >= 500 ? Math.min(30000, 5000 * 2 ** a) : Math.min(10000, 1000 * 2 ** a);
         console.warn('Request failed for "' + label + '". Retrying in ' + ms + 'ms...');
         await sleep(ms);
       }
@@ -102,14 +102,9 @@ async function get(u, s, label) {
 async function serp(k, s) {
   const d = await get(firstUrl(k, s), s, k);
   const rows = Array.isArray(d.organic_results) ? d.organic_results : [];
-
-  // An empty SERP is not the same thing as a keyword being unranked.
-  // Treat it as an API/data failure so a transient ZenRows/Google response
-  // cannot overwrite known rankings with false "not ranking" values.
   if (!rows.length) {
     throw new Error('ZenRows returned zero organic results for "' + k + '". Refusing to treat this as not ranking.');
   }
-
   return { rows: rows.slice(0, Number(s.max_position) || 10), pages: 1 };
 }
 
@@ -156,6 +151,7 @@ async function main() {
   const h = read(F.h, null) || { history: {} };
   h.history = h.history && typeof h.history === 'object' ? h.history : {};
   const checked = r.last_updated;
+  let failedKeywords = 0;
 
   for (const dc of cfg.domains) {
     const d = dom(dc.domain);
@@ -168,24 +164,43 @@ async function main() {
       console.log('[' + (i + 1) + '/' + dc.keywords.length + '] ' + k);
       const p = prev(old, d, k);
 
-      const z = await serp(k, s);
-      const f = find(z.rows, d);
-      const status = f.position === null ? 'not_ranking' : 'ranking';
-      const rec = {
-        keyword: k,
-        position: f.position,
-        previous_position: p,
-        change: Number.isFinite(p) && Number.isFinite(f.position) ? p - f.position : null,
-        url: f.url,
-        status,
-        checked_at: checked
-      };
+      try {
+        const z = await serp(k, s);
+        const f = find(z.rows, d);
+        const status = f.position === null ? 'not_ranking' : 'ranking';
+        const rec = {
+          keyword: k,
+          position: f.position,
+          previous_position: p,
+          change: Number.isFinite(p) && Number.isFinite(f.position) ? p - f.position : null,
+          url: f.url,
+          status,
+          checked_at: checked
+        };
 
-      r.domains[d].keywords.push(rec);
-      h.history[d] ??= {};
-      h.history[d][k] ??= [];
-      h.history[d][k].push({ checked_at: checked, position: f.position, status });
-      console.log(f.position === null ? '  NOT IN TOP ' + s.max_position : '  Position: ' + f.position);
+        r.domains[d].keywords.push(rec);
+        h.history[d] ??= {};
+        h.history[d][k] ??= [];
+        h.history[d][k].push({ checked_at: checked, position: f.position, status });
+        console.log(f.position === null ? '  NOT IN TOP ' + s.max_position : '  Position: ' + f.position);
+      } catch (e) {
+        // One broken ZenRows request must not abort the entire daily run.
+        // Keep the last known position visible, but mark the current check
+        // as an error so it cannot be mistaken for a genuine "not ranking".
+        failedKeywords++;
+        const message = String(e?.message || e).slice(0, 500);
+        r.domains[d].keywords.push({
+          keyword: k,
+          position: null,
+          previous_position: p,
+          change: null,
+          url: null,
+          status: 'error',
+          error: message,
+          checked_at: checked
+        });
+        console.error('  ERROR: ' + message);
+      }
 
       if (Number(s.request_delay_ms) > 0 && i < dc.keywords.length - 1) {
         await sleep(Number(s.request_delay_ms));
@@ -196,7 +211,12 @@ async function main() {
   h.last_updated = checked;
   write(F.r, r);
   write(F.h, h);
-  console.log('==========================================\nRanking check completed — Top ' + s.max_position + '\n==========================================');
+
+  if (failedKeywords) {
+    console.warn('==========================================\nRanking check completed with ' + failedKeywords + ' keyword error(s). Failed checks were recorded as status=error and were NOT treated as not ranking.\n==========================================');
+  } else {
+    console.log('==========================================\nRanking check completed — Top ' + s.max_position + '\n==========================================');
+  }
 }
 
 main().catch(e => {
