@@ -27,9 +27,19 @@ jobs:
       contents: write
 
     steps:
+      - name: Workflow trigger heartbeat
+        run: |
+          echo "Event: ${{ github.event_name }}"
+          echo "Schedule: ${{ github.event.schedule }}"
+          echo "Run started (UTC): $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+          echo "Run started (UAE): $(TZ=Asia/Dubai date '+%Y-%m-%d %H:%M:%S %Z')"
+          echo "Run ID: ${{ github.run_id }}"
+          echo "Commit: ${{ github.sha }}"
+
       - name: Checkout code
         uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
 
       - name: Set up Node.js
@@ -54,12 +64,12 @@ jobs:
           GOOGLE_URL=$(node -e "const u=new URL('https://www.google.com/search'); u.searchParams.set('q',process.argv[1]); u.searchParams.set('hl','en'); u.searchParams.set('gl','in'); process.stdout.write(u.toString())" "$KEYWORD")
           ENCODED_GOOGLE_URL=$(node -e "process.stdout.write(encodeURIComponent(process.argv[1]))" "$GOOGLE_URL")
           SERP_ENDPOINT='https://serp.api.zenrows.com/v1/targets/google/search'
-          echo ''; echo '=========================================='; echo 'ZenRows diagnostic: Google India URL'; echo "Keyword: $KEYWORD"; echo 'API key: present (value hidden)'; echo "Google URL: $GOOGLE_URL"; echo "ZenRows endpoint: $SERP_ENDPOINT"
+          echo "Google URL: $GOOGLE_URL"
           BODY_FILE=$(mktemp); HEADERS_FILE=$(mktemp)
           HTTP_STATUS=$(curl --silent --show-error --location --connect-timeout 15 --max-time 60 --dump-header "$HEADERS_FILE" --output "$BODY_FILE" --write-out '%{http_code}' --request GET --header 'Accept: application/json' "${SERP_ENDPOINT}?apikey=${ZENROWS_API_KEY}&url=${ENCODED_GOOGLE_URL}")
           CURL_STATUS=$?
-          echo "curl exit status: $CURL_STATUS"; echo "HTTP status: $HTTP_STATUS"; echo 'Response headers:'; grep -Ei '^(HTTP/|content-type:|content-length:|concurrency-|retry-after:|x-)' "$HEADERS_FILE" | head -40 || true
-          echo 'Response metadata/body preview:'
+          echo "curl exit status: $CURL_STATUS"; echo "HTTP status: $HTTP_STATUS"
+          echo 'Response headers:'; grep -Ei '^(HTTP/|content-type:|content-length:|concurrency-|retry-after:|x-)' "$HEADERS_FILE" | head -40 || true
           node - "$BODY_FILE" <<'NODE'
           const fs = require('fs');
           const raw = fs.readFileSync(process.argv[2], 'utf8');
