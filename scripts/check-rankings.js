@@ -42,17 +42,13 @@ function match(link, target) {
 }
 
 function firstUrl(k, s) {
-  // ZenRows' Google Search API supports a full Google Search URL via its
-  // `url` parameter. Put the Indian locale in Google's URL itself instead of
-  // relying on the previous /search/{query}?country=... request shape.
-  const google = new URL('https://www.google.com/search');
-  google.searchParams.set('q', k);
-  google.searchParams.set('hl', s.language || 'en');
-  google.searchParams.set('gl', s.country_code || 'in');
-
-  const u = new URL('https://serp.api.zenrows.com/v1/targets/google/search');
+  // Restore the previously working ZenRows Google Search API request shape.
+  // Do not pass a full Google URL; this endpoint expects the search query
+  // in the path and the optional locale parameters as query parameters.
+  const u = new URL('https://serp.api.zenrows.com/v1/targets/google/search/' + encodeURIComponent(k));
   u.searchParams.set('apikey', KEY);
-  u.searchParams.set('url', google.toString());
+  if (s.country_code) u.searchParams.set('country', s.country_code);
+  if (s.google_tld) u.searchParams.set('tld', s.google_tld);
   return u;
 }
 
@@ -115,6 +111,7 @@ async function main() {
   console.log('==========================================\nIndia Google Rank Checker\n==========================================');
   const s = { ...D, ...read(F.s, {}) };
   s.country_code = s.country_code || (String(s.country).toLowerCase() === 'india' ? 'in' : '');
+  s.google_tld = s.google_tld || (String(s.country).toLowerCase() === 'india' ? '.co.in' : '');
   s.max_position = Number(s.max_position) || 10;
 
   const cfg = read(F.k, null);
