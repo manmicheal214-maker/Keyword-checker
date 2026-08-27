@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-27T05:06:11.684Z",
+  "last_updated": "2026-08-27T14:22:20.200Z",
   "history": {
     "cricstrike.com": {
       "Cricstrike": [
@@ -1191,6 +1191,11 @@
         },
         {
           "checked_at": "2026-08-27T05:06:11.684Z",
+          "position": null,
+          "status": "not_ranking"
+        },
+        {
+          "checked_at": "2026-08-27T14:22:20.200Z",
           "position": null,
           "status": "not_ranking"
         }
