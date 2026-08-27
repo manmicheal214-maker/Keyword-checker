@@ -42,9 +42,7 @@ function match(link, target) {
 }
 
 function firstUrl(k, s) {
-  // Restore the previously working ZenRows Google Search API request shape.
-  // Do not pass a full Google URL; this endpoint expects the search query
-  // in the path and the optional locale parameters as query parameters.
+  // ZenRows Google Search API: query in the path, India locale as API params.
   const u = new URL('https://serp.api.zenrows.com/v1/targets/google/search/' + encodeURIComponent(k));
   u.searchParams.set('apikey', KEY);
   if (s.country_code) u.searchParams.set('country', s.country_code);
