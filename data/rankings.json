@@ -1,10 +1,10 @@
 {
-  "last_updated": "2026-08-27T14:22:20.200Z",
+  "last_updated": "2026-08-28T15:31:06.704Z",
   "country": "India",
   "country_code": "in",
   "language": "en",
   "search_engine": "google",
-  "max_position": 100,
+  "max_position": 10,
   "domains": {
     "cricstrike.com": {
       "domain": "cricstrike.com",
@@ -16,8 +16,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "This operation was aborted",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Cricstrike Login",
@@ -26,8 +26,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "This operation was aborted",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Cricstrike Signup",
@@ -36,8 +36,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "This operation was aborted",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Cricstrike Official Website",
@@ -47,7 +47,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Cricstrike app",
@@ -57,7 +57,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Cricstrike app download",
@@ -66,8 +66,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "This operation was aborted",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Cricstrike register",
@@ -76,8 +76,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "This operation was aborted",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Cricstrike platform",
@@ -87,7 +87,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         }
       ]
     },
@@ -101,8 +101,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "This operation was aborted",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Khelo24race Login",
@@ -112,7 +112,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Khelo24race Signup",
@@ -121,8 +121,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "This operation was aborted",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Khelo24race Official Website",
@@ -131,8 +131,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "This operation was aborted",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Khelo24race app",
@@ -142,7 +142,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Khelo24race app download",
@@ -151,8 +151,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "This operation was aborted",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Khelo24race register",
@@ -161,8 +161,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "This operation was aborted",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Khelo24race platform",
@@ -172,7 +172,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         }
       ]
     },
@@ -187,7 +187,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Kheloexch99",
@@ -197,7 +197,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Kheloexch 99",
@@ -206,8 +206,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "This operation was aborted",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Kheloexch Login",
@@ -217,7 +217,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Kheloexch Signup",
@@ -226,8 +226,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "This operation was aborted",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Kheloexch Official Website",
@@ -237,7 +237,7 @@
           "url": null,
           "status": "error",
           "error": "This operation was aborted",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Kheloexch app",
@@ -247,7 +247,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Kheloexch app download",
@@ -256,8 +256,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "This operation was aborted",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Kheloexch register",
@@ -266,8 +266,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "This operation was aborted",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Khelo Exchange",
@@ -277,7 +277,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Kheloexch Account",
@@ -286,8 +286,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "This operation was aborted",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Kheloexch Sign In",
@@ -297,7 +297,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Kheloexch Customer Care",
@@ -305,8 +305,9 @@
           "previous_position": null,
           "change": null,
           "url": null,
-          "status": "not_ranking",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Kheloexch Official Link",
@@ -316,7 +317,7 @@
           "url": null,
           "status": "error",
           "error": "This operation was aborted",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Kheloexch Portal",
@@ -326,7 +327,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Kheloexch99 App Download",
@@ -336,7 +337,7 @@
           "url": null,
           "status": "error",
           "error": "This operation was aborted",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Kheloexch99 Account",
@@ -345,8 +346,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "This operation was aborted",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Kheloexch99 Register",
@@ -354,9 +355,8 @@
           "previous_position": null,
           "change": null,
           "url": null,
-          "status": "error",
-          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "status": "not_ranking",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Kheloexch99 Login",
@@ -365,8 +365,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "This operation was aborted",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Kheloexch99 Platform",
@@ -376,7 +376,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Kheloexch99 Website",
@@ -385,8 +385,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "This operation was aborted",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         }
       ]
     },
@@ -400,8 +400,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "This operation was aborted",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Cricmatch247",
@@ -411,7 +411,7 @@
           "url": null,
           "status": "error",
           "error": "This operation was aborted",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Cricmatch Login",
@@ -420,8 +420,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "This operation was aborted",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Cricmatch Signup",
@@ -431,7 +431,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Cricmatch Official Website",
@@ -441,7 +441,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Cricmatch app",
@@ -451,7 +451,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Cricmatch app download",
@@ -461,7 +461,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Cricmatch register",
@@ -470,8 +470,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "This operation was aborted",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Cricmatch platform",
@@ -481,7 +481,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Cricmatch247 Official Website",
@@ -491,7 +491,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Cricmatch247 Register",
@@ -500,8 +500,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "This operation was aborted",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Cricmatch247 Signup",
@@ -511,7 +511,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Cricmatch247 App",
@@ -521,7 +521,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Cricmatch247 Login",
@@ -531,7 +531,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Cricmatch247 Website",
@@ -541,7 +541,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         }
       ]
     },
@@ -556,7 +556,7 @@
           "url": null,
           "status": "error",
           "error": "This operation was aborted",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Khelofun Login",
@@ -566,7 +566,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Khelofun Signup",
@@ -575,8 +575,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "This operation was aborted",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Khelofun Official Website",
@@ -586,7 +586,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Khelofun app",
@@ -596,7 +596,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Khelofun app download",
@@ -606,7 +606,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Khelofun Register",
@@ -616,7 +616,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Khelofun platform",
@@ -625,8 +625,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "This operation was aborted",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Khelofun portal",
@@ -635,8 +635,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "This operation was aborted",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Khelofun Affiliates",
@@ -645,8 +645,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "This operation was aborted",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Khelofun Customer Care",
@@ -656,7 +656,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "checked_at": "2026-08-28T15:31:06.704Z"
         },
         {
           "keyword": "Khelofun Official Link",
@@ -665,8 +665,8 @@
           "change": null,
           "url": null,
           "status": "error",
-          "error": "This operation was aborted",
-          "checked_at": "2026-08-27T14:22:20.200Z"
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-08-28T15:31:06.704Z"
         }
       ]
     }
