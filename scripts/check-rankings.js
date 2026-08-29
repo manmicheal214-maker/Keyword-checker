@@ -5,7 +5,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const F = { k: path.join(ROOT, 'config/keywords.json'), s: path.join(ROOT, 'config/settings.json'), r: path.join(ROOT, 'data/rankings.json'), h: path.join(ROOT, 'data/history.json') };
 const KEY = process.env.ZENROWS_API_KEY;
-const D = { country: 'India', country_code: 'in', language: 'en', search_engine: 'google', google_tld: '.co.in', max_keywords_per_domain: 50, max_domains: 5, max_position: 10, request_delay_ms: 2000, request_timeout_ms: 60000, max_retries: 2, history_days: 365 };
+const D = { country: 'India', country_code: 'in', language: 'en', search_engine: 'google', google_tld: '.co.in', max_domains: 5, max_position: 10, request_delay_ms: 2000, request_timeout_ms: 60000, max_retries: 2, history_days: 365 };
 
 const read = (f, d) => { if (!fs.existsSync(f)) return d; const s = fs.readFileSync(f, 'utf8'); return s.trim() ? JSON.parse(s) : d; };
 const write = (f, d) => { const t = f + '.tmp'; fs.writeFileSync(t, JSON.stringify(d, null, 2) + '\n'); fs.renameSync(t, f); };
@@ -14,12 +14,16 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 function dom(v) { try { return new URL(/^https?:\/\//i.test(v) ? v : 'https://' + v).hostname.toLowerCase().replace(/^www\./, '').replace(/\.$/, ''); } catch { return null; } }
 function match(link, target) { try { const h = new URL(link).hostname.toLowerCase().replace(/^www\./, '').replace(/\.$/, ''); return h === target || h.endsWith('.' + target); } catch { return false; } }
 
-function firstUrl(k, s) {
-  // ZenRows' working Google endpoint: Google query in the path, India locale via country/tld.
-  const u = new URL('https://serp.api.zenrows.com/v1/targets/google/search/' + encodeURIComponent(k));
+// This is the exact request shape proven by the successful workflow diagnostic:
+// https://www.google.com/search?q=<keyword>&hl=en&gl=in -> ZenRows ?url=<encoded Google URL>
+function firstUrl(k) {
+  const google = new URL('https://www.google.com/search');
+  google.searchParams.set('q', k);
+  google.searchParams.set('hl', 'en');
+  google.searchParams.set('gl', 'in');
+  const u = new URL('https://serp.api.zenrows.com/v1/targets/google/search');
   u.searchParams.set('apikey', KEY);
-  u.searchParams.set('country', s.country_code || 'in');
-  u.searchParams.set('tld', s.google_tld || '.co.in');
+  u.searchParams.set('url', google.toString());
   return u;
 }
 
@@ -37,43 +41,62 @@ async function get(u, s, label) {
       return d;
     } catch (e) {
       last = e;
-      if (a < Number(s.max_retries)) { const ms = e.httpStatus >= 500 ? Math.min(30000, 5000 * 2 ** a) : Math.min(10000, 1000 * 2 ** a); console.warn('Request failed for "' + label + '". Retrying in ' + ms + 'ms...'); await sleep(ms); }
+      if (a < Number(s.max_retries)) {
+        const ms = e.httpStatus >= 500 ? Math.min(30000, 5000 * 2 ** a) : Math.min(10000, 1000 * 2 ** a);
+        console.warn('Request failed for "' + label + '". Retrying in ' + ms + 'ms...');
+        await sleep(ms);
+      }
     } finally { clearTimeout(tm); }
   }
   throw last;
 }
 
-function resultUrl(row) {
+function directUrl(row) {
   if (!row || typeof row !== 'object') return null;
-  for (const key of ['link', 'url', 'destination', 'target_url']) {
+  for (const key of ['url', 'destination', 'target_url', 'link']) {
     if (typeof row[key] === 'string' && /^https?:\/\//i.test(row[key])) return row[key];
   }
-  // ZenRows can return Google redirect paths. These are not domain-matchable and
-  // are deliberately treated as unresolved rather than as a ranking hit.
+  return null;
+}
+
+function displayedDomain(row) {
+  if (!row || typeof row !== 'object') return null;
+  for (const key of ['displayed_link', 'displayedLink', 'domain', 'source', 'site', 'website']) {
+    if (typeof row[key] === 'string') {
+      const value = row[key].trim();
+      if (value) return value;
+    }
+  }
   return null;
 }
 
 async function serp(k, s) {
-  const d = await get(firstUrl(k, s), s, k);
-  const rows = Array.isArray(d.organic_results) ? d.organic_results : [];
+  const d = await get(firstUrl(k), s, k);
+  const rows = Array.isArray(d.organic_results) ? d.organic_results.slice(0, 10) : [];
   if (!rows.length) throw new Error('ZenRows returned zero organic results for "' + k + '". Refusing to treat this as not ranking.');
-  return rows.slice(0, 10);
+  return rows;
 }
 
-function find(rows, d) {
-  // Only inspect the first 10 organic results. No pagination.
-  for (let i = 0; i < rows.length && i < 10; i++) {
-    const link = resultUrl(rows[i]);
-    if (link && match(link, d)) return { position: i + 1, url: link };
+function find(rows, target) {
+  for (let i = 0; i < Math.min(rows.length, 10); i++) {
+    const row = rows[i];
+    const link = directUrl(row);
+    if (link && match(link, target)) return { position: i + 1, url: link };
+    const shown = displayedDomain(row);
+    if (shown) {
+      const candidate = dom(shown);
+      if (candidate === target || candidate?.endsWith('.' + target)) return { position: i + 1, url: link || shown };
+    }
   }
   return { position: null, url: null };
 }
+
 function prev(doc, d, k) { const a = doc?.domains?.[d]?.keywords; if (!Array.isArray(a)) return null; const x = a.find(v => String(v.keyword || '').trim().toLowerCase() === k.trim().toLowerCase()); return Number.isFinite(x?.position) ? x.position : null; }
 function mainDoc(s) { const x = read(F.r, null) || { domains: {} }; x.domains = x.domains && typeof x.domains === 'object' ? x.domains : {}; x.last_updated = new Date().toISOString(); x.country = s.country; x.country_code = s.country_code; x.language = s.language; x.search_engine = s.search_engine; x.max_position = 10; return x; }
 
 async function main() {
   console.log('==========================================\nIndia Google Rank Checker\n==========================================');
-  const s = { ...D, ...read(F.s, {}) }; s.country_code = s.country_code || 'in'; s.google_tld = s.google_tld || '.co.in';
+  const s = { ...D, ...read(F.s, {}) }; s.country_code = 'in'; s.google_tld = '.co.in'; s.max_position = 10;
   const cfg = read(F.k, null); if (!KEY) throw Error('ZENROWS_API_KEY environment variable is missing.');
   if (!Array.isArray(cfg?.domains) || !cfg.domains.length) throw Error('config/keywords.json must contain domains.');
   if (cfg.domains.length > Number(s.max_domains)) throw Error('Maximum allowed domains: ' + s.max_domains);
