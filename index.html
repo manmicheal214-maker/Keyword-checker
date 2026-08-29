@@ -2,263 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>India SEO Rank Tracker</title>
-
-  <meta
-    name="description"
-    content="Google India keyword rank tracker"
-  >
-
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Premium Google India SEO keyword rank dashboard">
+  <title>India SEO Rank Intelligence</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
   <header class="site-header">
-
     <div class="container header-inner">
-
-      <div>
-        <h1>🇮🇳 India SEO Rank Tracker</h1>
-
-        <p>
-          Google keyword position monitoring
-        </p>
+      <div class="brand-lockup">
+        <div class="app-mark">R</div>
+        <div>
+          <div class="eyebrow">SEO PERFORMANCE</div>
+          <h1>Rank Intelligence</h1>
+          <p>India Google keyword performance, simplified.</p>
+        </div>
       </div>
-
-      <div class="header-badge">
-        Google India
+      <div class="header-controls">
+        <label>Date range<select id="dateRange"><option>Latest check</option><option>Last 7 days</option><option>Last 30 days</option></select></label>
+        <label>Country<select id="country"><option>🇮🇳 India</option></select></label>
+        <label>Search engine<select id="engine"><option>Google</option></select></label>
+        <label>Device<select id="device"><option>Desktop</option></select></label>
+        <button id="refreshButton" class="button">↻ Refresh</button>
+        <button id="exportButton" class="button button-ghost">↓ Export</button>
       </div>
-
     </div>
-
   </header>
 
-
   <main class="container">
-
-    <section class="overview">
-
-      <div class="stat-card">
-        <span>Total Keywords</span>
-        <strong id="totalKeywords">—</strong>
-      </div>
-
-      <div class="stat-card">
-        <span>Average Position</span>
-        <strong id="averagePosition">—</strong>
-      </div>
-
-      <div class="stat-card">
-        <span>Top 3</span>
-        <strong id="top3">—</strong>
-      </div>
-
-      <div class="stat-card">
-        <span>Top 10</span>
-        <strong id="top10">—</strong>
-      </div>
-
-      <div class="stat-card">
-        <span>Top 20</span>
-        <strong id="top20">—</strong>
-      </div>
-
-      <div class="stat-card">
-        <span>Top 50</span>
-        <strong id="top50">—</strong>
-      </div>
-
-      <div class="stat-card">
-        <span>Not Ranking</span>
-        <strong id="notRanking">—</strong>
-      </div>
-
-      <div class="stat-card">
-        <span>Last Updated</span>
-        <strong
-          id="lastUpdated"
-          class="small-value"
-        >
-          —
-        </strong>
-      </div>
-
+    <section class="kpi-grid" aria-label="Overall performance">
+      <div class="kpi-card kpi-primary"><span>Total keywords</span><strong id="totalKeywords">—</strong><small>Tracked across all brands</small></div>
+      <div class="kpi-card"><span>Average position</span><strong id="averagePosition">—</strong><small>Lower is better</small></div>
+      <div class="kpi-card"><span>Top 3</span><strong id="top3">—</strong><small>High-intent visibility</small></div>
+      <div class="kpi-card"><span>Top 10</span><strong id="top10">—</strong><small>Page-one keywords</small></div>
+      <div class="kpi-card"><span>Top 20</span><strong id="top20">—</strong><small>Strong visibility</small></div>
+      <div class="kpi-card"><span>Not ranking</span><strong id="notRanking">—</strong><small>Needs attention</small></div>
     </section>
 
-
-    <section class="info-panel">
-
-      <div>
-        <span class="label">
-          Target Domain
-        </span>
-
-        <strong id="domain">
-          —
-        </strong>
-      </div>
-
-      <div>
-        <span class="label">
-          Country
-        </span>
-
-        <strong>
-          🇮🇳 India
-        </strong>
-      </div>
-
-      <div>
-        <span class="label">
-          Search Engine
-        </span>
-
-        <strong>
-          Google
-        </strong>
-      </div>
-
-      <div>
-        <span class="label">
-          Device
-        </span>
-
-        <strong>
-          Desktop
-        </strong>
-      </div>
-
+    <section class="context-bar">
+      <div><span>Tracked brands</span><strong id="domain">—</strong></div>
+      <div><span>Last updated</span><strong id="lastUpdated">—</strong></div>
+      <div><span>Market</span><strong>India · Google</strong></div>
     </section>
 
+    <section class="section-heading">
+      <div><div class="eyebrow blue">BRAND PERFORMANCE</div><h2>How each brand is performing</h2><p>Five at-a-glance views of visibility, rankings and momentum.</p></div>
+      <div class="legend"><span><i class="dot good"></i>Improving</span><span><i class="dot bad"></i>Declining</span></div>
+    </section>
+
+    <section id="brandGrid" class="brand-grid" aria-label="Brand performance cards"></section>
+
+    <section class="section-heading table-heading">
+      <div><div class="eyebrow blue">KEYWORD RANKINGS</div><h2>Detailed keyword performance</h2><p>Search, filter and inspect every tracked keyword.</p></div>
+      <div id="resultCount" class="result-count">—</div>
+    </section>
 
     <section class="dashboard">
-
       <div class="toolbar">
-
         <div class="toolbar-left">
-
-          <input
-            id="search"
-            type="search"
-            placeholder="Search keywords..."
-            autocomplete="off"
-          >
-
-          <select id="positionFilter">
-
-            <option value="all">
-              All positions
-            </option>
-
-            <option value="top3">
-              Top 3
-            </option>
-
-            <option value="top10">
-              Top 10
-            </option>
-
-            <option value="top20">
-              Top 20
-            </option>
-
-            <option value="top50">
-              Top 50
-            </option>
-
-            <option value="not-ranking">
-              Not ranking
-            </option>
-
-          </select>
-
-          <button
-            id="refreshButton"
-            class="button"
-          >
-            ↻ Refresh
-          </button>
-
+          <div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Search keywords or brands..." autocomplete="off"></div>
+          <select id="positionFilter"><option value="all">All positions</option><option value="top3">Top 3</option><option value="top10">Top 10</option><option value="top20">Top 20</option><option value="top50">Top 50</option><option value="not-ranking">Not ranking</option></select>
         </div>
-
-
-        <button
-          id="exportButton"
-          class="button button-green"
-        >
-          ↓ Export CSV
-        </button>
-
       </div>
-
-
       <div id="errorContainer"></div>
-
-
       <div class="table-container">
-
         <table>
-
-          <thead>
-
-            <tr>
-              <th>#</th>
-              <th>Keyword</th>
-              <th>Position</th>
-              <th>Previous</th>
-              <th>Change</th>
-              <th>Ranking URL</th>
-              <th>Checked</th>
-            </tr>
-
-          </thead>
-
-          <tbody id="rankingsTable">
-
-            <tr>
-              <td colspan="7">
-                <div class="loading">
-                  Loading rankings...
-                </div>
-              </td>
-            </tr>
-
-          </tbody>
-
+          <thead><tr><th>#</th><th>Keyword</th><th>Position</th><th>Previous</th><th>Change</th><th>Ranking URL</th><th>Checked</th></tr></thead>
+          <tbody id="rankingsTable"><tr><td colspan="7"><div class="loading">Loading rankings...</div></td></tr></tbody>
         </table>
-
       </div>
-
     </section>
 
-
-    <footer>
-
-      <p>
-        Rankings are automatically checked every day
-        at 9:00 AM IST using GitHub Actions.
-      </p>
-
-      <p>
-        Data source: Google India via ZenRows.
-      </p>
-
-    </footer>
-
+    <footer><p>Automatic daily tracking · Google India via ZenRows · Top 10 ranking check</p></footer>
   </main>
-
-
   <script src="app.js"></script>
-
 </body>
 </html>
