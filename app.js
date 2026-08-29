@@ -1,150 +1,21 @@
 (() => {
   'use strict';
-
   const DATA_URL = './data/rankings.json';
   const state = { rankings: null, rows: [], search: '', filter: 'all' };
-
   const $ = id => document.getElementById(id);
-
-  function escapeHtml(value) {
-    return String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
-  }
-
-  function flatten(data) {
-    const rows = [];
-    for (const [domainKey, domainData] of Object.entries(data.domains || {})) {
-      for (const item of Array.isArray(domainData?.keywords) ? domainData.keywords : []) {
-        rows.push({
-          domain: domainData.domain || domainKey,
-          keyword: item.keyword || '',
-          position: Number.isFinite(item.position) ? item.position : null,
-          previous: Number.isFinite(item.previous_position) ? item.previous_position : null,
-          change: Number.isFinite(item.change) ? item.change : null,
-          url: item.url || null,
-          checkedAt: item.checked_at || data.last_updated || null,
-          error: item.error || null
-        });
-      }
-    }
-    return rows;
-  }
-
-  function formatDate(value) {
-    if (!value) return '—';
-    const date = new Date(value);
-    if (Number.isNaN(date.getTime())) return escapeHtml(value);
-    return new Intl.DateTimeFormat('en-IN', { dateStyle: 'medium', timeStyle: 'short' }).format(date);
-  }
-
-  function positionBadge(position) {
-    if (position === null) return '<span class="position-badge position-none">—</span>';
-    const cls = position <= 3 ? 'position-top' : 'position-badge';
-    return `<span class="position-badge ${cls}">${position}</span>`;
-  }
-
-  function changeBadge(change) {
-    if (change === null || change === 0) return '<span class="change-badge change-flat">—</span>';
-    if (change > 0) return `<span class="change-badge change-up">↑ ${change}</span>`;
-    return `<span class="change-badge change-down">↓ ${Math.abs(change)}</span>`;
-  }
-
-  function updateStats() {
-    const rows = state.rows;
-    const ranked = rows.filter(r => r.position !== null);
-    const positions = ranked.map(r => r.position);
-    $('totalKeywords').textContent = rows.length;
-    $('averagePosition').textContent = positions.length ? (positions.reduce((a, b) => a + b, 0) / positions.length).toFixed(1) : '—';
-    $('top3').textContent = rows.filter(r => r.position !== null && r.position <= 3).length;
-    $('top10').textContent = rows.filter(r => r.position !== null && r.position <= 10).length;
-    $('top20').textContent = rows.filter(r => r.position !== null && r.position <= 20).length;
-    $('top50').textContent = rows.filter(r => r.position !== null && r.position <= 50).length;
-    $('notRanking').textContent = rows.filter(r => r.position === null).length;
-    $('lastUpdated').textContent = formatDate(state.rankings?.last_updated);
-    const domains = [...new Set(rows.map(r => r.domain).filter(Boolean))];
-    $('domain').textContent = domains.length === 1 ? domains[0] : `${domains.length} domains`;
-  }
-
-  function filteredRows() {
-    const query = state.search.trim().toLowerCase();
-    return state.rows.filter(row => {
-      const matchesSearch = !query || row.keyword.toLowerCase().includes(query) || row.domain.toLowerCase().includes(query);
-      const p = row.position;
-      const matchesFilter = state.filter === 'all' ||
-        (state.filter === 'not-ranking' && p === null) ||
-        (state.filter === 'top3' && p !== null && p <= 3) ||
-        (state.filter === 'top10' && p !== null && p <= 10) ||
-        (state.filter === 'top20' && p !== null && p <= 20) ||
-        (state.filter === 'top50' && p !== null && p <= 50);
-      return matchesSearch && matchesFilter;
-    });
-  }
-
-  function renderTable() {
-    const rows = filteredRows();
-    const table = $('rankingsTable');
-    if (!rows.length) {
-      table.innerHTML = '<tr><td colspan="7"><div class="empty">No keywords match your current filters.</div></td></tr>';
-      return;
-    }
-
-    table.innerHTML = rows.map((row, index) => `
-      <tr>
-        <td class="rank-number">${index + 1}</td>
-        <td><div class="keyword">${escapeHtml(row.keyword)}</div><div class="muted">${escapeHtml(row.domain)}</div></td>
-        <td>${positionBadge(row.position)}</td>
-        <td>${row.previous === null ? '<span class="muted">—</span>' : row.previous}</td>
-        <td>${changeBadge(row.change)}</td>
-        <td>${row.url ? `<a class="rank-link" href="${escapeHtml(row.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(row.url)}</a>` : '<span class="muted">Not found</span>'}</td>
-        <td class="muted">${formatDate(row.checkedAt)}</td>
-      </tr>`).join('');
-  }
-
-  async function loadRankings(showSpinner = true) {
-    const button = $('refreshButton');
-    const table = $('rankingsTable');
-    $('errorContainer').innerHTML = '';
-    if (showSpinner) {
-      button.disabled = true;
-      table.innerHTML = '<tr><td colspan="7"><div class="loading">Loading latest rankings...</div></td></tr>';
-    }
-
-    try {
-      // Cache-buster is important on GitHub Pages after Actions commits new JSON.
-      const response = await fetch(`${DATA_URL}?v=${Date.now()}`, { cache: 'no-store' });
-      if (!response.ok) throw new Error(`Could not load rankings.json (HTTP ${response.status}).`);
-      const data = await response.json();
-      if (!data || typeof data !== 'object' || !data.domains) throw new Error('rankings.json has an unexpected format.');
-      state.rankings = data;
-      state.rows = flatten(data);
-      updateStats();
-      renderTable();
-    } catch (error) {
-      table.innerHTML = '<tr><td colspan="7"><div class="empty">Unable to load ranking data.</div></td></tr>';
-      $('errorContainer').innerHTML = `<div class="error"><strong>Data loading error:</strong> ${escapeHtml(error.message)}<br><small>Try Refresh, or wait for the GitHub Pages deployment to finish.</small></div>`;
-    } finally {
-      button.disabled = false;
-    }
-  }
-
-  function exportCsv() {
-    const rows = filteredRows();
-    const headers = ['Domain', 'Keyword', 'Position', 'Previous Position', 'Change', 'Ranking URL', 'Checked'];
-    const csv = [headers, ...rows.map(r => [r.domain, r.keyword, r.position ?? '', r.previous ?? '', r.change ?? '', r.url || '', r.checkedAt || ''])]
-      .map(row => row.map(value => `"${String(value).replace(/"/g, '""')}"`).join(','))
-      .join('\n');
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `seo-rankings-${new Date().toISOString().slice(0, 10)}.csv`;
-    link.click();
-    URL.revokeObjectURL(url);
-  }
-
-  $('search').addEventListener('input', event => { state.search = event.target.value; renderTable(); });
-  $('positionFilter').addEventListener('change', event => { state.filter = event.target.value; renderTable(); });
-  $('refreshButton').addEventListener('click', () => loadRankings(true));
-  $('exportButton').addEventListener('click', exportCsv);
-
-  loadRankings(true);
+  const accents = ['#2563eb','#7c3aed','#0f9f6e','#c77916','#e05270'];
+  function escapeHtml(value) { return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+  function flatten(data) { const rows=[]; for(const [domainKey,domainData] of Object.entries(data.domains||{})){ for(const item of (Array.isArray(domainData?.keywords)?domainData.keywords:[])){ rows.push({domain:domainData.domain||domainKey,keyword:item.keyword||'',position:Number.isFinite(item.position)?item.position:null,previous:Number.isFinite(item.previous_position)?item.previous_position:null,change:Number.isFinite(item.change)?item.change:null,url:item.url||null,checkedAt:item.checked_at||data.last_updated||null,error:item.error||null}); }} return rows; }
+  function formatDate(value){if(!value)return '—';const d=new Date(value);if(Number.isNaN(d.getTime()))return escapeHtml(value);return new Intl.DateTimeFormat('en-IN',{dateStyle:'medium',timeStyle:'short'}).format(d)}
+  function positionBadge(p){if(p===null)return '<span class="position-badge position-none">—</span>';return `<span class="position-badge ${p<=3?'position-top':''}">${p}</span>`}
+  function changeBadge(c){if(c===null||c===0)return '<span class="change-badge change-flat">—</span>';return c>0?`<span class="change-badge change-up">↑ ${c}</span>`:`<span class="change-badge change-down">↓ ${Math.abs(c)}</span>`}
+  function score(rows){if(!rows.length)return 0;const ranked=rows.filter(r=>r.position!==null);return Math.round((ranked.reduce((n,r)=>n+(r.position<=3?100:r.position<=10?80:r.position<=20?60:r.position<=50?35:15),0)/(rows.length*100))*100)}
+  function spark(rows){const vals=rows.map(r=>r.position===null?20:Math.min(20,r.position));if(!vals.length)return '';const max=20,min=1;const pts=vals.map((v,i)=>`${(i/(Math.max(vals.length-1,1)))*100},${6+((v-min)/(max-min))*24}`).join(' ');return `<svg viewBox="0 0 100 38" preserveAspectRatio="none" aria-label="Ranking trend"><polyline points="${pts}" fill="none" stroke="var(--brand)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>`}
+  function renderBrands(){const groups={};state.rows.forEach(r=>(groups[r.domain]??=[]).push(r));const domains=Object.keys(groups).slice(0,5);const fallback=['CricketX','Khelo24Race','Brand 3','Brand 4','Brand 5'];$('brandGrid').innerHTML=domains.map((domain,i)=>{const rows=groups[domain],ranked=rows.filter(r=>r.position!==null),avg=ranked.length?(ranked.reduce((a,r)=>a+r.position,0)/ranked.length).toFixed(1):'—',changes=rows.filter(r=>r.change!==null),net=changes.length?changes.reduce((a,r)=>a+r.change,0):0;const label=domain.split('.')[0].replace(/[-_]/g,' ');const name=label?label.replace(/\b\w/g,c=>c.toUpperCase()):fallback[i];return `<article class="brand-card" style="--brand:${accents[i%accents.length]}"><div class="brand-top"><div class="brand-name-wrap"><div class="brand-icon">${escapeHtml(name.charAt(0).toUpperCase())}</div><div><div class="brand-name">${escapeHtml(name)}</div><div class="brand-domain">${escapeHtml(domain)}</div></div></div><div><div class="score-label">Score</div><div class="score">${score(rows)}</div></div></div><div class="brand-main"><div><div class="avg-label">Avg. position</div><div class="avg">${avg}</div></div>${net===0?'<span class="change flat">→ Stable</span>':`<span class="change ${net>0?'good':'bad'}">${net>0?'↑':'↓'} ${Math.abs(net)}</span>`}</div><div class="counts"><div class="count"><strong>${rows.filter(r=>r.position!==null&&r.position<=3).length}</strong><span>Top 3</span></div><div class="count"><strong>${rows.filter(r=>r.position!==null&&r.position<=10).length}</strong><span>Top 10</span></div><div class="count"><strong>${rows.filter(r=>r.position!==null&&r.position<=20).length}</strong><span>Top 20</span></div></div><div class="sparkline">${spark(rows)}</div></article>`}).join('');if(!domains.length)$('brandGrid').innerHTML='<div class="empty">No brand data available yet.</div>';}
+  function updateStats(){const rows=state.rows,ranked=rows.filter(r=>r.position!==null),positions=ranked.map(r=>r.position);$('totalKeywords').textContent=rows.length;$('averagePosition').textContent=positions.length?(positions.reduce((a,b)=>a+b,0)/positions.length).toFixed(1):'—';$('top3').textContent=rows.filter(r=>r.position!==null&&r.position<=3).length;$('top10').textContent=rows.filter(r=>r.position!==null&&r.position<=10).length;$('top20').textContent=rows.filter(r=>r.position!==null&&r.position<=20).length;$('notRanking').textContent=rows.filter(r=>r.position===null).length;$('lastUpdated').textContent=formatDate(state.rankings?.last_updated);const domains=[...new Set(rows.map(r=>r.domain).filter(Boolean))];$('domain').textContent=domains.length?`${domains.length} brands`:'—';renderBrands();}
+  function filteredRows(){const q=state.search.trim().toLowerCase();return state.rows.filter(r=>{const ms=!q||r.keyword.toLowerCase().includes(q)||r.domain.toLowerCase().includes(q);const p=r.position;const mf=state.filter==='all'||(state.filter==='not-ranking'&&p===null)||(state.filter==='top3'&&p!==null&&p<=3)||(state.filter==='top10'&&p!==null&&p<=10)||(state.filter==='top20'&&p!==null&&p<=20)||(state.filter==='top50'&&p!==null&&p<=50);return ms&&mf;});}
+  function renderTable(){const rows=filteredRows();$('resultCount').textContent=`${rows.length} keyword${rows.length===1?'':'s'}`;const table=$('rankingsTable');if(!rows.length){table.innerHTML='<tr><td colspan="7"><div class="empty">No keywords match your current filters.</div></td></tr>';return;}table.innerHTML=rows.map((r,i)=>`<tr><td class="rank-number">${i+1}</td><td><div class="keyword">${escapeHtml(r.keyword)}</div><div class="muted">${escapeHtml(r.domain)}</div></td><td>${positionBadge(r.position)}</td><td>${r.previous===null?'<span class="muted">—</span>':r.previous}</td><td>${changeBadge(r.change)}</td><td>${r.url?`<a class="rank-link" href="${escapeHtml(r.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(r.url)}</a>`:'<span class="muted">Not found</span>'}</td><td class="muted">${formatDate(r.checkedAt)}</td></tr>`).join('');}
+  async function loadRankings(showSpinner=true){const b=$('refreshButton'),t=$('rankingsTable');$('errorContainer').innerHTML='';if(showSpinner){b.disabled=true;t.innerHTML='<tr><td colspan="7"><div class="loading">Loading latest rankings...</div></td></tr>'}try{const response=await fetch(`${DATA_URL}?v=${Date.now()}`,{cache:'no-store'});if(!response.ok)throw new Error(`Could not load rankings.json (HTTP ${response.status}).`);const data=await response.json();if(!data||typeof data!=='object'||!data.domains)throw new Error('rankings.json has an unexpected format.');state.rankings=data;state.rows=flatten(data);updateStats();renderTable();}catch(e){t.innerHTML='<tr><td colspan="7"><div class="empty">Unable to load ranking data.</div></td></tr>';$('errorContainer').innerHTML=`<div class="error"><strong>Data loading error:</strong> ${escapeHtml(e.message)}<br><small>Try Refresh, or wait for the GitHub Pages deployment to finish.</small></div>`}finally{b.disabled=false}}
+  function exportCsv(){const rows=filteredRows(),headers=['Domain','Keyword','Position','Previous Position','Change','Ranking URL','Checked'];const csv=[headers,...rows.map(r=>[r.domain,r.keyword,r.position??'',r.previous??'',r.change??'',r.url||'',r.checkedAt||''])].map(row=>row.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=`seo-rankings-${new Date().toISOString().slice(0,10)}.csv`;link.click();URL.revokeObjectURL(url)}
+  $('search').addEventListener('input',e=>{state.search=e.target.value;renderTable()});$('positionFilter').addEventListener('change',e=>{state.filter=e.target.value;renderTable()});$('refreshButton').addEventListener('click',()=>loadRankings(true));$('exportButton').addEventListener('click',exportCsv);loadRankings(true);
 })();
