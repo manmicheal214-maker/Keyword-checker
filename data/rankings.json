@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-12T08:01:08.261Z",
+  "last_updated": "2026-09-13T08:25:59.808Z",
   "country": "India",
   "country_code": "in",
   "language": "en",
@@ -16,7 +16,7 @@
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Cricstrike Login",
@@ -25,7 +25,7 @@
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Cricstrike Signup",
@@ -34,16 +34,16 @@
           "change": 0,
           "url": "https://cricstrike.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Cricstrike Official Website",
           "position": 3,
-          "previous_position": 4,
-          "change": 1,
+          "previous_position": 3,
+          "change": 0,
           "url": "https://cricstrike.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Cricstrike app",
@@ -52,7 +52,7 @@
           "change": 0,
           "url": "https://cricstrike.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Cricstrike app download",
@@ -61,7 +61,7 @@
           "change": 0,
           "url": "https://cricstrike.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Cricstrike register",
@@ -70,7 +70,7 @@
           "change": 0,
           "url": "https://cricstrike.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Cricstrike platform",
@@ -79,7 +79,7 @@
           "change": 0,
           "url": "https://cricstrike.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         }
       ]
     },
@@ -89,11 +89,11 @@
         {
           "keyword": "Khelo24race",
           "position": null,
-          "previous_position": 1,
+          "previous_position": null,
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Khelo24race Login",
@@ -102,7 +102,7 @@
           "change": 0,
           "url": "https://khelo24race.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Khelo24race Signup",
@@ -111,7 +111,7 @@
           "change": 0,
           "url": "https://khelo24race.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Khelo24race Official Website",
@@ -120,7 +120,7 @@
           "change": 0,
           "url": "https://khelo24race.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Khelo24race app",
@@ -129,7 +129,7 @@
           "change": 0,
           "url": "https://khelo24race.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Khelo24race app download",
@@ -138,7 +138,7 @@
           "change": 0,
           "url": "https://khelo24race.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Khelo24race register",
@@ -147,7 +147,7 @@
           "change": 0,
           "url": "https://khelo24race.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Khelo24race platform",
@@ -156,7 +156,7 @@
           "change": 0,
           "url": "https://khelo24race.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         }
       ]
     },
@@ -170,7 +170,7 @@
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Kheloexch99",
@@ -179,7 +179,7 @@
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Kheloexch 99",
@@ -188,7 +188,7 @@
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Kheloexch Login",
@@ -198,7 +198,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Kheloexch Signup",
@@ -207,7 +207,7 @@
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Kheloexch Official Website",
@@ -216,7 +216,7 @@
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Kheloexch app",
@@ -225,7 +225,7 @@
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Kheloexch app download",
@@ -234,7 +234,7 @@
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Kheloexch register",
@@ -243,7 +243,7 @@
           "change": 0,
           "url": "https://kheloexch99.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Khelo Exchange",
@@ -252,16 +252,16 @@
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Kheloexch Account",
           "position": null,
-          "previous_position": 1,
+          "previous_position": null,
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Kheloexch Sign In",
@@ -270,7 +270,7 @@
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Kheloexch Customer Care",
@@ -279,7 +279,7 @@
           "change": 0,
           "url": "https://kheloexch99.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Kheloexch Official Link",
@@ -288,7 +288,7 @@
           "change": 0,
           "url": "https://kheloexch99.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Kheloexch Portal",
@@ -297,7 +297,7 @@
           "change": 0,
           "url": "https://kheloexch99.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Kheloexch99 App Download",
@@ -306,7 +306,7 @@
           "change": 0,
           "url": "https://kheloexch99.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Kheloexch99 Account",
@@ -315,7 +315,7 @@
           "change": 0,
           "url": "https://kheloexch99.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Kheloexch99 Register",
@@ -324,7 +324,7 @@
           "change": 0,
           "url": "https://kheloexch99.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Kheloexch99 Login",
@@ -333,7 +333,7 @@
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Kheloexch99 Platform",
@@ -342,7 +342,7 @@
           "change": 0,
           "url": "https://kheloexch99.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Kheloexch99 Website",
@@ -351,7 +351,7 @@
           "change": 0,
           "url": "https://kheloexch99.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         }
       ]
     },
@@ -365,7 +365,7 @@
           "change": 0,
           "url": "https://cricmatch247.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Cricmatch247",
@@ -374,36 +374,35 @@
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Cricmatch Login",
-          "position": 1,
-          "previous_position": 1,
-          "change": 0,
-          "url": "https://cricmatch247.com",
-          "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
-        },
-        {
-          "keyword": "Cricmatch Signup",
           "position": null,
-          "previous_position": 6,
+          "previous_position": 1,
           "change": null,
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
+        },
+        {
+          "keyword": "Cricmatch Signup",
+          "position": 7,
+          "previous_position": null,
+          "change": null,
+          "url": "https://cricmatch247.com",
+          "status": "ranking",
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Cricmatch Official Website",
-          "position": null,
-          "previous_position": 6,
+          "position": 9,
+          "previous_position": null,
           "change": null,
-          "url": null,
-          "status": "error",
-          "error": "This operation was aborted",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "url": "https://cricmatch247.com",
+          "status": "ranking",
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Cricmatch app",
@@ -411,8 +410,9 @@
           "previous_position": null,
           "change": null,
           "url": null,
-          "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Cricmatch app download",
@@ -421,16 +421,16 @@
           "change": 0,
           "url": "https://cricmatch247.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Cricmatch register",
-          "position": null,
+          "position": 8,
           "previous_position": null,
           "change": null,
-          "url": null,
-          "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "url": "https://cricmatch247.com",
+          "status": "ranking",
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Cricmatch platform",
@@ -439,16 +439,17 @@
           "change": 0,
           "url": "https://cricmatch247.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Cricmatch247 Official Website",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://cricmatch247.com",
-          "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Cricmatch247 Register",
@@ -457,7 +458,7 @@
           "change": 0,
           "url": "https://cricmatch247.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Cricmatch247 Signup",
@@ -466,7 +467,7 @@
           "change": 0,
           "url": "https://cricmatch247.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Cricmatch247 App",
@@ -475,7 +476,7 @@
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Cricmatch247 Login",
@@ -483,8 +484,9 @@
           "previous_position": null,
           "change": null,
           "url": null,
-          "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Cricmatch247 Website",
@@ -493,7 +495,7 @@
           "change": 0,
           "url": "https://cricmatch247.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         }
       ]
     },
@@ -507,7 +509,7 @@
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Khelofun Login",
@@ -516,7 +518,7 @@
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Khelofun Signup",
@@ -525,7 +527,7 @@
           "change": 0,
           "url": "https://khelofun.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Khelofun Official Website",
@@ -534,7 +536,7 @@
           "change": 0,
           "url": "https://khelofun.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Khelofun app",
@@ -543,7 +545,7 @@
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Khelofun app download",
@@ -552,16 +554,17 @@
           "change": 0,
           "url": "https://khelofun.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Khelofun Register",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://khelofun.com",
-          "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Khelofun platform",
@@ -570,7 +573,7 @@
           "change": 0,
           "url": "https://khelofun.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Khelofun portal",
@@ -579,7 +582,7 @@
           "change": 0,
           "url": "https://khelofun.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Khelofun Affiliates",
@@ -588,7 +591,7 @@
           "change": 0,
           "url": "https://khelofun.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Khelofun Customer Care",
@@ -597,7 +600,7 @@
           "change": 0,
           "url": "https://khelofun.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         },
         {
           "keyword": "Khelofun Official Link",
@@ -606,7 +609,7 @@
           "change": 0,
           "url": "https://khelofun.com",
           "status": "ranking",
-          "checked_at": "2026-09-12T08:01:08.261Z"
+          "checked_at": "2026-09-13T08:25:59.808Z"
         }
       ]
     }
