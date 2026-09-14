@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-13T08:25:59.808Z",
+  "last_updated": "2026-09-14T09:06:57.129Z",
   "history": {
     "cricstrike.com": {
       "Cricstrike": [
@@ -625,6 +625,11 @@
           "checked_at": "2026-09-13T08:25:59.808Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-09-14T09:06:57.129Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Cricstrike app download": [
@@ -875,6 +880,11 @@
         },
         {
           "checked_at": "2026-09-13T08:25:59.808Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-09-14T09:06:57.129Z",
           "position": 1,
           "status": "ranking"
         }
@@ -2257,6 +2267,11 @@
           "checked_at": "2026-09-13T08:25:59.808Z",
           "position": null,
           "status": "not_ranking"
+        },
+        {
+          "checked_at": "2026-09-14T09:06:57.129Z",
+          "position": null,
+          "status": "not_ranking"
         }
       ],
       "Kheloexch 99": [
@@ -2578,6 +2593,11 @@
         },
         {
           "checked_at": "2026-09-13T08:25:59.808Z",
+          "position": null,
+          "status": "not_ranking"
+        },
+        {
+          "checked_at": "2026-09-14T09:06:57.129Z",
           "position": null,
           "status": "not_ranking"
         }
@@ -4299,6 +4319,11 @@
           "checked_at": "2026-09-13T08:25:59.808Z",
           "position": null,
           "status": "not_ranking"
+        },
+        {
+          "checked_at": "2026-09-14T09:06:57.129Z",
+          "position": null,
+          "status": "not_ranking"
         }
       ],
       "Kheloexch99 Platform": [
@@ -5773,6 +5798,11 @@
           "checked_at": "2026-09-12T08:01:08.261Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-09-14T09:06:57.129Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Cricmatch247 Register": [
@@ -6778,6 +6808,11 @@
           "checked_at": "2026-09-13T08:25:59.808Z",
           "position": 1,
           "status": "ranking"
+        },
+        {
+          "checked_at": "2026-09-14T09:06:57.129Z",
+          "position": 1,
+          "status": "ranking"
         }
       ],
       "Khelofun Official Website": [
@@ -7401,6 +7436,11 @@
         },
         {
           "checked_at": "2026-09-13T08:25:59.808Z",
+          "position": 1,
+          "status": "ranking"
+        },
+        {
+          "checked_at": "2026-09-14T09:06:57.129Z",
           "position": 1,
           "status": "ranking"
         }

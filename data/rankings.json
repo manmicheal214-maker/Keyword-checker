@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-13T08:25:59.808Z",
+  "last_updated": "2026-09-14T09:06:57.129Z",
   "country": "India",
   "country_code": "in",
   "language": "en",
@@ -15,8 +15,9 @@
           "previous_position": null,
           "change": null,
           "url": null,
-          "status": "not_ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Cricstrike Login",
@@ -24,26 +25,29 @@
           "previous_position": null,
           "change": null,
           "url": null,
-          "status": "not_ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Cricstrike Signup",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://cricstrike.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Cricstrike Official Website",
-          "position": 3,
+          "position": null,
           "previous_position": 3,
-          "change": 0,
-          "url": "https://cricstrike.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Cricstrike app",
@@ -52,16 +56,17 @@
           "change": 0,
           "url": "https://cricstrike.com",
           "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Cricstrike app download",
-          "position": 2,
+          "position": null,
           "previous_position": 2,
-          "change": 0,
-          "url": "https://cricstrike.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Cricstrike register",
@@ -70,16 +75,17 @@
           "change": 0,
           "url": "https://cricstrike.com",
           "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Cricstrike platform",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://cricstrike.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         }
       ]
     },
@@ -92,71 +98,79 @@
           "previous_position": null,
           "change": null,
           "url": null,
-          "status": "not_ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Khelo24race Login",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://khelo24race.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Khelo24race Signup",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://khelo24race.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Khelo24race Official Website",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://khelo24race.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Khelo24race app",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://khelo24race.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Khelo24race app download",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://khelo24race.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Khelo24race register",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://khelo24race.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Khelo24race platform",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://khelo24race.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         }
       ]
     },
@@ -169,8 +183,9 @@
           "previous_position": null,
           "change": null,
           "url": null,
-          "status": "not_ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Kheloexch99",
@@ -179,7 +194,7 @@
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Kheloexch 99",
@@ -187,8 +202,9 @@
           "previous_position": null,
           "change": null,
           "url": null,
-          "status": "not_ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Kheloexch Login",
@@ -198,7 +214,7 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Kheloexch Signup",
@@ -207,7 +223,7 @@
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Kheloexch Official Website",
@@ -215,8 +231,9 @@
           "previous_position": null,
           "change": null,
           "url": null,
-          "status": "not_ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Kheloexch app",
@@ -224,8 +241,9 @@
           "previous_position": null,
           "change": null,
           "url": null,
-          "status": "not_ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Kheloexch app download",
@@ -233,17 +251,19 @@
           "previous_position": null,
           "change": null,
           "url": null,
-          "status": "not_ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Kheloexch register",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://kheloexch99.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Khelo Exchange",
@@ -251,8 +271,9 @@
           "previous_position": null,
           "change": null,
           "url": null,
-          "status": "not_ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Kheloexch Account",
@@ -260,8 +281,9 @@
           "previous_position": null,
           "change": null,
           "url": null,
-          "status": "not_ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Kheloexch Sign In",
@@ -269,62 +291,69 @@
           "previous_position": null,
           "change": null,
           "url": null,
-          "status": "not_ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Kheloexch Customer Care",
-          "position": 3,
+          "position": null,
           "previous_position": 3,
-          "change": 0,
-          "url": "https://kheloexch99.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Kheloexch Official Link",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://kheloexch99.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Kheloexch Portal",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://kheloexch99.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Kheloexch99 App Download",
-          "position": 2,
+          "position": null,
           "previous_position": 2,
-          "change": 0,
-          "url": "https://kheloexch99.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Kheloexch99 Account",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://kheloexch99.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Kheloexch99 Register",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://kheloexch99.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Kheloexch99 Login",
@@ -333,25 +362,27 @@
           "change": null,
           "url": null,
           "status": "not_ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Kheloexch99 Platform",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://kheloexch99.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Kheloexch99 Website",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://kheloexch99.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         }
       ]
     },
@@ -360,12 +391,13 @@
       "keywords": [
         {
           "keyword": "Cricmatch",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://cricmatch247.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Cricmatch247",
@@ -373,36 +405,39 @@
           "previous_position": null,
           "change": null,
           "url": null,
-          "status": "not_ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Cricmatch Login",
           "position": null,
-          "previous_position": 1,
+          "previous_position": null,
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
+        },
+        {
+          "keyword": "Cricmatch Signup",
+          "position": null,
+          "previous_position": 7,
           "change": null,
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-09-13T08:25:59.808Z"
-        },
-        {
-          "keyword": "Cricmatch Signup",
-          "position": 7,
-          "previous_position": null,
-          "change": null,
-          "url": "https://cricmatch247.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Cricmatch Official Website",
-          "position": 9,
-          "previous_position": null,
+          "position": null,
+          "previous_position": 9,
           "change": null,
-          "url": "https://cricmatch247.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "url": null,
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Cricmatch app",
@@ -412,62 +447,66 @@
           "url": null,
           "status": "error",
           "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Cricmatch app download",
-          "position": 2,
+          "position": null,
           "previous_position": 2,
-          "change": 0,
-          "url": "https://cricmatch247.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Cricmatch register",
-          "position": 8,
+          "position": null,
+          "previous_position": 8,
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
+        },
+        {
+          "keyword": "Cricmatch platform",
+          "position": null,
+          "previous_position": 2,
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
+        },
+        {
+          "keyword": "Cricmatch247 Official Website",
+          "position": 1,
           "previous_position": null,
           "change": null,
           "url": "https://cricmatch247.com",
           "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
-          "keyword": "Cricmatch platform",
-          "position": 2,
-          "previous_position": 2,
-          "change": 0,
-          "url": "https://cricmatch247.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
-        },
-        {
-          "keyword": "Cricmatch247 Official Website",
+          "keyword": "Cricmatch247 Register",
           "position": null,
           "previous_position": 1,
           "change": null,
           "url": null,
           "status": "error",
-          "error": "This operation was aborted",
-          "checked_at": "2026-09-13T08:25:59.808Z"
-        },
-        {
-          "keyword": "Cricmatch247 Register",
-          "position": 1,
-          "previous_position": 1,
-          "change": 0,
-          "url": "https://cricmatch247.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Cricmatch247 Signup",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://cricmatch247.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Cricmatch247 App",
@@ -475,8 +514,9 @@
           "previous_position": null,
           "change": null,
           "url": null,
-          "status": "not_ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Cricmatch247 Login",
@@ -486,16 +526,17 @@
           "url": null,
           "status": "error",
           "error": "This operation was aborted",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Cricmatch247 Website",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://cricmatch247.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         }
       ]
     },
@@ -508,8 +549,9 @@
           "previous_position": null,
           "change": null,
           "url": null,
-          "status": "not_ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Khelofun Login",
@@ -517,8 +559,9 @@
           "previous_position": null,
           "change": null,
           "url": null,
-          "status": "not_ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Khelofun Signup",
@@ -527,16 +570,17 @@
           "change": 0,
           "url": "https://khelofun.com",
           "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Khelofun Official Website",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://khelofun.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Khelofun app",
@@ -544,27 +588,29 @@
           "previous_position": null,
           "change": null,
           "url": null,
-          "status": "not_ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Khelofun app download",
-          "position": 1,
-          "previous_position": 1,
-          "change": 0,
-          "url": "https://khelofun.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
-        },
-        {
-          "keyword": "Khelofun Register",
           "position": null,
           "previous_position": 1,
           "change": null,
           "url": null,
           "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
+        },
+        {
+          "keyword": "Khelofun Register",
+          "position": null,
+          "previous_position": null,
+          "change": null,
+          "url": null,
+          "status": "error",
           "error": "This operation was aborted",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Khelofun platform",
@@ -573,43 +619,47 @@
           "change": 0,
           "url": "https://khelofun.com",
           "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Khelofun portal",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://khelofun.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "ZenRows HTTP 500: An internal error occurred. Please contact support if this problem persists.",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Khelofun Affiliates",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://khelofun.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Khelofun Customer Care",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://khelofun.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         },
         {
           "keyword": "Khelofun Official Link",
-          "position": 1,
+          "position": null,
           "previous_position": 1,
-          "change": 0,
-          "url": "https://khelofun.com",
-          "status": "ranking",
-          "checked_at": "2026-09-13T08:25:59.808Z"
+          "change": null,
+          "url": null,
+          "status": "error",
+          "error": "This operation was aborted",
+          "checked_at": "2026-09-14T09:06:57.129Z"
         }
       ]
     }
