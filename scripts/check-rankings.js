@@ -120,6 +120,6 @@ async function main() {
     }
   }
   h.last_updated = checked; write(F.r, r); write(F.h, h);
-  if (failedKeywords) console.warn('Ranking check completed with ' + failedKeywords + ' keyword error(s).'); else console.log('==========================================\nRanking check completed — Top 10\n==========================================');
+  if (failedKeywords) { console.error('Ranking check completed with ' + failedKeywords + ' keyword error(s).'); process.exitCode = 1; } else console.log('==========================================\\nRanking check completed — Top 10\\n==========================================');
 }
 main().catch(e => { console.error('FATAL ERROR: ' + e.message); process.exit(1); });
