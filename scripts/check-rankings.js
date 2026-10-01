@@ -14,16 +14,21 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 function dom(v) { try { return new URL(/^https?:\/\//i.test(v) ? v : 'https://' + v).hostname.toLowerCase().replace(/^www\./, '').replace(/\.$/, ''); } catch { return null; } }
 function match(link, target) { try { const h = new URL(link).hostname.toLowerCase().replace(/^www\./, '').replace(/\.$/, ''); return h === target || h.endsWith('.' + target); } catch { return false; } }
 
-// This is the exact request shape proven by the successful workflow diagnostic:
-// https://www.google.com/search?q=<keyword>&hl=en&gl=in -> ZenRows ?url=<encoded Google URL>
-function firstUrl(k) {
+// Current ZenRows Fetch API:
+// https://api.zenrows.com/v1/?apikey=<key>&url=<Google search URL>&autoparse=true&js_render=true
+// The Google-specific Scraper API is deprecated; Fetch is the supported endpoint.
+function firstUrl(k, premium = false) {
   const google = new URL('https://www.google.com/search');
   google.searchParams.set('q', k);
   google.searchParams.set('hl', 'en');
   google.searchParams.set('gl', 'in');
-  const u = new URL('https://serp.api.zenrows.com/v1/targets/google/search');
+  google.searchParams.set('num', '10');
+  const u = new URL('https://api.zenrows.com/v1/');
   u.searchParams.set('apikey', KEY);
   u.searchParams.set('url', google.toString());
+  u.searchParams.set('autoparse', 'true');
+  u.searchParams.set('js_render', 'true');
+  if (premium) u.searchParams.set('premium_proxy', 'true');
   return u;
 }
 
@@ -41,7 +46,7 @@ async function get(u, s, label) {
       return d;
     } catch (e) {
       last = e;
-      if (a < Number(s.max_retries)) {
+      if (a < Number(s.max_retries) && (!e.httpStatus || e.httpStatus >= 500)) {
         const ms = e.httpStatus >= 500 ? Math.min(30000, 5000 * 2 ** a) : Math.min(10000, 1000 * 2 ** a);
         console.warn('Request failed for "' + label + '". Retrying in ' + ms + 'ms...');
         await sleep(ms);
@@ -71,7 +76,14 @@ function displayedDomain(row) {
 }
 
 async function serp(k, s) {
-  const d = await get(firstUrl(k), s, k);
+  let d;
+  try {
+    d = await get(firstUrl(k, false), s, k);
+  } catch (e) {
+    if (!String(e?.message || e).includes('REQS002')) throw e;
+    console.warn('ZenRows requires premium proxies for "' + k + '". Retrying once with premium_proxy=true.');
+    d = await get(firstUrl(k, true), s, k + ' (premium retry)');
+  }
   const rows = Array.isArray(d.organic_results) ? d.organic_results.slice(0, 10) : [];
   if (!rows.length) throw new Error('ZenRows returned zero organic results for "' + k + '". Refusing to treat this as not ranking.');
   return rows;
