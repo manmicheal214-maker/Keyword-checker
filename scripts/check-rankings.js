@@ -26,7 +26,7 @@ function firstUrl(k) {
   const u = new URL('https://api.zenrows.com/v1/');
   u.searchParams.set('apikey', KEY);
   u.searchParams.set('url', google.toString());
-  u.searchParams.set('autoparse', 'true');
+  u.searchParams.set('extract', 'auto');
   return u;
 }
 
