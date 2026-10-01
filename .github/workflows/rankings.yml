@@ -66,8 +66,10 @@ jobs:
           SERP_ENDPOINT='https://serp.api.zenrows.com/v1/targets/google/search'
           echo "Google URL: $GOOGLE_URL"
           BODY_FILE=$(mktemp); HEADERS_FILE=$(mktemp)
-          HTTP_STATUS=$(curl --silent --show-error --location --connect-timeout 5 --max-time 5 --dump-header "$HEADERS_FILE" --output "$BODY_FILE" --write-out '%{http_code}' --request GET --header 'Accept: application/json' "${SERP_ENDPOINT}?apikey=${ZENROWS_API_KEY}&url=${ENCODED_GOOGLE_URL}")
+          set +e
+          HTTP_STATUS=$(curl --silent --show-error --location --connect-timeout 10 --max-time 60 --dump-header "$HEADERS_FILE" --output "$BODY_FILE" --write-out '%{http_code}' --request GET --header 'Accept: application/json' "${SERP_ENDPOINT}?apikey=${ZENROWS_API_KEY}&url=${ENCODED_GOOGLE_URL}")
           CURL_STATUS=$?
+          set -e
           echo "curl exit status: $CURL_STATUS"; echo "HTTP status: $HTTP_STATUS"
           echo 'Response headers:'; grep -Ei '^(HTTP/|content-type:|content-length:|concurrency-|retry-after:|x-)' "$HEADERS_FILE" | head -40 || true
           node - "$BODY_FILE" <<'NODE'
