@@ -15,7 +15,7 @@ function dom(v) { try { return new URL(/^https?:\/\//i.test(v) ? v : 'https://' 
 function match(link, target) { try { const h = new URL(link).hostname.toLowerCase().replace(/^www\./, '').replace(/\.$/, ''); return h === target || h.endsWith('.' + target); } catch { return false; } }
 
 // Current ZenRows Fetch API:
-// https://api.zenrows.com/v1/?apikey=<key>&url=<Google search URL>&mode=auto&autoparse=true&js_render=true
+// https://api.zenrows.com/v1/?apikey=<key>&url=<Google search URL>&autoparse=true&js_render=true
 // The Google-specific Scraper API is deprecated; Fetch is the supported endpoint.
 function firstUrl(k, premium = false) {
   const google = new URL('https://www.google.com/search');
@@ -26,7 +26,6 @@ function firstUrl(k, premium = false) {
   const u = new URL('https://api.zenrows.com/v1/');
   u.searchParams.set('apikey', KEY);
   u.searchParams.set('url', google.toString());
-  u.searchParams.set('mode', 'auto');
   u.searchParams.set('autoparse', 'true');
   u.searchParams.set('js_render', 'true');
   if (premium) u.searchParams.set('premium_proxy', 'true');
