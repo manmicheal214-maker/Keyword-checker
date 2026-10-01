@@ -47,8 +47,8 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Validate package configuration
+        run: node --check scripts/check-rankings.js
 
       - name: ZenRows diagnostic
         if: github.event_name == 'workflow_dispatch' && inputs.diagnostic == true
