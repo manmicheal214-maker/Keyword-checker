@@ -65,9 +65,9 @@ jobs:
           ENCODED_GOOGLE_URL=$(node -e "process.stdout.write(encodeURIComponent(process.argv[1]))" "$GOOGLE_URL")
           ZENROWS_ENDPOINT='https://api.zenrows.com/v1/'
           echo "Google URL: $GOOGLE_URL"
-          echo 'ZenRows mode: auto (starts cheap and escalates only when needed)'
+          echo 'ZenRows mode: auto + js_render=true; premium_proxy is used only if ZenRows returns REQS002'
           BODY_FILE=$(mktemp); HEADERS_FILE=$(mktemp)
-          HTTP_STATUS=$(curl --silent --show-error --location --connect-timeout 10 --max-time 60 --dump-header "$HEADERS_FILE" --output "$BODY_FILE" --write-out '%{http_code}' --request GET --header 'Accept: application/json' "${ZENROWS_ENDPOINT}?apikey=${ZENROWS_API_KEY}&url=${ENCODED_GOOGLE_URL}&mode=auto&autoparse=true")
+          HTTP_STATUS=$(curl --silent --show-error --location --connect-timeout 10 --max-time 60 --dump-header "$HEADERS_FILE" --output "$BODY_FILE" --write-out '%{http_code}' --request GET --header 'Accept: application/json' "${ZENROWS_ENDPOINT}?apikey=${ZENROWS_API_KEY}&url=${ENCODED_GOOGLE_URL}&mode=auto&autoparse=true&js_render=true")
           CURL_STATUS=$?
           echo "curl exit status: $CURL_STATUS"; echo "HTTP status: $HTTP_STATUS"
           echo 'Response headers:'; grep -Ei '^(HTTP/|content-type:|content-length:|concurrency-|retry-after:|x-)' "$HEADERS_FILE" | head -40 || true
