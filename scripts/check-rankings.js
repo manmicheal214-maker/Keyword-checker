@@ -46,7 +46,7 @@ async function get(u, s, label) {
       return d;
     } catch (e) {
       last = e;
-      if (a < Number(s.max_retries)) {
+      if (a < Number(s.max_retries) && (!e.httpStatus || e.httpStatus >= 500)) {
         const ms = e.httpStatus >= 500 ? Math.min(30000, 5000 * 2 ** a) : Math.min(10000, 1000 * 2 ** a);
         console.warn('Request failed for "' + label + '". Retrying in ' + ms + 'ms...');
         await sleep(ms);
@@ -81,7 +81,7 @@ async function serp(k, s) {
     d = await get(firstUrl(k, false), s, k);
   } catch (e) {
     if (!String(e?.message || e).includes('REQS002')) throw e;
-    console.warn('ZenRows requested premium proxies for "' + k + '". Retrying once with premium_proxy=true.');
+    console.warn('ZenRows requires premium proxies for "' + k + '". Retrying once with premium_proxy=true.');
     d = await get(firstUrl(k, true), s, k + ' (premium retry)');
   }
   const rows = Array.isArray(d.organic_results) ? d.organic_results.slice(0, 10) : [];
