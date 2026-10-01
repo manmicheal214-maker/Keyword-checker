@@ -39,7 +39,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.ref_name }}
           fetch-depth: 0
 
       - name: Set up Node.js
@@ -63,10 +63,10 @@ jobs:
           if [ -z "$KEYWORD" ]; then KEYWORD=$(node -e "const fs=require('fs'); const c=JSON.parse(fs.readFileSync('config/keywords.json','utf8')); process.stdout.write(c.domains[0].keywords[0]);"); fi
           GOOGLE_URL=$(node -e "const u=new URL('https://www.google.com/search'); u.searchParams.set('q',process.argv[1]); u.searchParams.set('hl','en'); u.searchParams.set('gl','in'); process.stdout.write(u.toString())" "$KEYWORD")
           ENCODED_GOOGLE_URL=$(node -e "process.stdout.write(encodeURIComponent(process.argv[1]))" "$GOOGLE_URL")
-          SERP_ENDPOINT='https://serp.api.zenrows.com/v1/targets/google/search'
+          ZENROWS_ENDPOINT='https://api.zenrows.com/v1/'
           echo "Google URL: $GOOGLE_URL"
           BODY_FILE=$(mktemp); HEADERS_FILE=$(mktemp)
-          HTTP_STATUS=$(curl --silent --show-error --location --connect-timeout 5 --max-time 5 --dump-header "$HEADERS_FILE" --output "$BODY_FILE" --write-out '%{http_code}' --request GET --header 'Accept: application/json' "${SERP_ENDPOINT}?apikey=${ZENROWS_API_KEY}&url=${ENCODED_GOOGLE_URL}")
+          HTTP_STATUS=$(curl --silent --show-error --location --connect-timeout 5 --max-time 5 --dump-header "$HEADERS_FILE" --output "$BODY_FILE" --write-out '%{http_code}' --request GET --header 'Accept: application/json' "${ZENROWS_ENDPOINT}?apikey=${ZENROWS_API_KEY}&url=${ENCODED_GOOGLE_URL}&autoparse=true")
           CURL_STATUS=$?
           echo "curl exit status: $CURL_STATUS"; echo "HTTP status: $HTTP_STATUS"
           echo 'Response headers:'; grep -Ei '^(HTTP/|content-type:|content-length:|concurrency-|retry-after:|x-)' "$HEADERS_FILE" | head -40 || true
@@ -77,12 +77,12 @@ jobs:
           if (value && typeof value === 'object') {
             const safe = { ...value };
             for (const key of Object.keys(safe)) if (/api.?key|token|authorization|secret|password/i.test(key)) safe[key] = '[REDACTED]';
-            if (Array.isArray(safe.organic_results)) { safe.organic_results_count = safe.organic_results.length; safe.organic_results_preview = safe.organic_results.slice(0, 5).map(x => ({title:x.title, link:x.link})); delete safe.organic_results; }
+            for (const key of ['organic_results','organic','results']) if (Array.isArray(safe[key])) { safe[key + '_count'] = safe[key].length; safe[key + '_preview'] = safe[key].slice(0, 5).map(x => ({title:x.title, link:x.link, url:x.url})); delete safe[key]; }
             console.log(JSON.stringify(safe, null, 2).slice(0, 8000));
           } else console.log(String(value).slice(0, 4000));
           NODE
           rm -f "$BODY_FILE" "$HEADERS_FILE"
-          if [ "$CURL_STATUS" -ne 0 ]; then echo 'DIAGNOSTIC FAILED: curl could not obtain a response within 5 seconds.'; exit "$CURL_STATUS"; fi
+          if [ "$CURL_STATUS" -ne 0 ]; then echo 'DIAGNOSTIC FAILED: curl could not obtain a response within 60 seconds.'; exit "$CURL_STATUS"; fi
           if [ "$HTTP_STATUS" -lt 200 ] || [ "$HTTP_STATUS" -ge 300 ]; then echo 'DIAGNOSTIC FAILED: ZenRows did not return HTTP 2xx.'; exit 1; fi
           echo 'DIAGNOSTIC PASSED: ZenRows returned HTTP 2xx for the Google India URL.'
 
